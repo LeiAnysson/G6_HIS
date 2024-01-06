@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class adminEdit {
@@ -41,14 +42,18 @@ public class adminEdit {
 		try {
 			BufferedReader doctor = new BufferedReader(new InputStreamReader(System.in));
 			BufferedWriter Doctor = new BufferedWriter(new FileWriter("try.txt"));
+			BufferedReader nurse = new BufferedReader(new InputStreamReader(System.in));
+			BufferedWriter Nurse = new BufferedWriter(new FileWriter("Nurse.txt"));
+			PrintWriter print = new PrintWriter(System.out);
 			adminEdit admin = new adminEdit();
 			System.out
 					.println("What staff you want to edit: \n" + "[1] Doctors\n" + "[2] Nurses\n" + "[3] Maintenance");
 			String edit = scn.next();
 
 			if (edit.equals("1")) {
-				
+				while (true) {
 					System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
+
 					if (scn.next().equals("1")) {
 						System.out.print("Enter Name: ");
 						String name = doctor.readLine();
@@ -56,29 +61,43 @@ public class adminEdit {
 						String position = doctor.readLine();
 						System.out.print("Enter Contact Number: ");
 						String contactNum = doctor.readLine();
-
+						
 						Doctor.write("Dr." + name + "\n");
 						Doctor.write("Position: " + position + "\n");
-						Doctor.write("Contact Number: " + contactNum);
-						if (Doctor == null) {
-							Doctor.close();
-							if (doctor == null) {
-								doctor.close();
-							}
-						}
-					} else if (scn.equals("2")) {
+						Doctor.write("Contact Number: " + contactNum + "\n");
+						Doctor.newLine();
+	
+						Doctor.flush();
 
-					} else if (scn.equals("0")) {
+					} else if (scn.next().equals("2")) {
+
+						System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
+						if (scn.next().equals("1")) {
+							System.out.println("Enter Name: ");
+							name = nurse.readLine();
+							System.out.println("Enter Position: ");
+							position = nurse.readLine();
+							System.out.println("Enter Contact Number: ");
+							contactNum = nurse.readLine();
+
+							Nurse.write("Nurse." + name + "\n");
+							Nurse.write("Position: " + position + "\n");
+							Nurse.write("Contact Number: " + contactNum + "\n");
+							Nurse.newLine();
+							Nurse.flush();
+
+						}
+
+					} else if (scn.next().equals("0")) {
+
 						Admin admins = new Admin();
 						admins.Admin();
 					}
 				}
-			
+			}
 
 		} catch (IOException e) {
 			e.printStackTrace();
-		} finally {
-
 		}
 	}// end of edit staff class
 
