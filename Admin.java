@@ -1,4 +1,9 @@
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Admin extends DoctorSchedule {
@@ -27,7 +32,7 @@ public class Admin extends DoctorSchedule {
 		System.out.println("\t \t \t \t \t \t \t \t \t \t Choose from the following:\n"
 				+ "\t \t \t \t \t \t \t \t \t \t [1] Patient\n" + "\t \t \t \t \t \t \t \t \t \t [2] Doctor\n"
 				+ "\t \t \t \t \t \t \t \t \t \t [3] Staff\n" + "\t \t \t \t \t \t \t \t \t \t [4] Equipment\n"
-				+ "\t \t \t \t \t \t \t \t \t \t [0] Back");
+				+ "\t \t \t \t \t \t \t \t \t \t [5] Add/Remove Staff\n" + "\t \t \t \t \t \t \t \t \t \t [0] Back");
 		aInput = scn.nextInt();
 		categories(aInput);
 	}
@@ -56,21 +61,9 @@ public class Admin extends DoctorSchedule {
 			}
 			break;
 		case 3:
+			ListOfStaff listOfStaff = new ListOfStaff();
+			listOfStaff.ListOfStaff();
 			System.out.println("=============================================================");
-			System.out.println("STAFFS:\n" + "[1] Nurse\n" + "[2] Maintenance\n" + "\t[0] Back");
-			aInput = scn.nextInt();
-			System.out.println("=============================================================");
-			if (aInput == 1) {
-				// Dsched dS = new Dsched();
-				System.out.println("NURSES: ");
-			} else if (aInput == 2) {
-				// Dappoint dA = new Dappoint();
-				System.out.println("MAINTENANCE:");
-			} else if (aInput == 0) {
-				pickingAdmin(aInput);
-			} else {
-				System.err.println("Invalid.");
-			}
 			break;
 		case 4:
 			Equipment EQ = new Equipment();
@@ -91,10 +84,19 @@ public class Admin extends DoctorSchedule {
 				System.err.println("Invalid.");
 			}
 			break;
+		case 5:
+			adminEdit edit = new adminEdit();
+			edit.editStaff();
+			
+			break;
 		case 0:
 			Main main = new Main();
 			main.pickingMain(aInput, scn);
 			break;
 		}
 	}
-}
+	
+	}
+
+	
+
