@@ -1,4 +1,4 @@
-package Package2;
+package oopTp;
 import java.util.*;
 
 public class PatientAppointment extends DoctorSchedule{ 
