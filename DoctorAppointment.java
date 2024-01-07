@@ -1,19 +1,22 @@
-package Package2;
+
 import java.util.*;
 
-public class DoctorAppointment extends PatientAppointment{
+public class DoctorAppointment extends PatientAppointment {
+
 	static TreeMap<String, String> list = new TreeMap<>(appointmentList);
-	static LinkedList<String> doctorList = new LinkedList<>();
-	String doc = getChosen();
+	static TreeMap<String, String> cList = new TreeMap<>(AppointmentList);
 
 	public static void doctorAppointment() {
 		System.out.println("LIST OF APPOINTMENTS \n");
 		System.out.println("Appointment #" + "\t| Patient Name" + "\t| Doctor");
-		for(int i = 0; i < list.size(); i++) {
-			for (Map.Entry<String, String> entry : list.entrySet()) {
-				System.out.println("~ " + entry.getKey() + "\t| " + entry.getValue() + "\t| " + doctorList.get(i));
-			}
+
+		for (Map.Entry<String, String> entry : appointmentList.entrySet()) {
+			String key = entry.getKey().toString();
+			String value = entry.getValue().toString();
+			System.out.print(entry.getKey());
+			System.out.print("\t " + list.get(key));
+			System.out.println("\t \t " + cList.get(key));
 		}
-		System.out.println();
+
 	}
 }

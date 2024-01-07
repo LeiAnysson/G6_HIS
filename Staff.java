@@ -1,8 +1,7 @@
-package Package2;
 
 public class Staff {
-	static String name;
-	static String positions;
+	String name;
+	String positions;
 
 	public Staff(String name, String position) {
 		this.name = name;
@@ -10,16 +9,8 @@ public class Staff {
 	}
 
 	public void displayInfo() {
-		System.out.println("\t \t \t \t \t \t \t \t Name: " + name);
-		System.out.println("\t \t \t \t \t \t \t \t Position: " + positions);
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public String getPosition() {
-		return positions;
+		System.out.println("Name: " + name);
+		System.out.println("Position: " + positions);
 	}
 }
 

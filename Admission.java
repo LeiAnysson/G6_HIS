@@ -1,4 +1,3 @@
-package Package2;
 import java.util.Scanner;
 
 public class Admission {
@@ -6,7 +5,7 @@ public class Admission {
 	private static String address;
 	private static String gender;
 	private static String birthday;
-	private static int contact;
+	private static String contact;
 	private static String email;
 
 	public static void setName(String n) {
@@ -41,11 +40,11 @@ public class Admission {
 		return "Date of birth: " + birthday;
 	}
 
-	public static void setContact(int c) {
+	public static void setContact(String c) {
 		contact = c;
 	}
 
-	public static int getContact() {
+	public static String getContact() {
 		return contact;
 	}
 
@@ -79,7 +78,7 @@ public class Admission {
 		System.out.print("Date of Birth [DD/MM/YYYY]: ");
 		setBirthday(scn.nextLine());
 		System.out.print("Contact #: ");
-		setContact(scn.nextInt());
+		setContact(scn.nextLine());
 		scn.nextLine();
 		System.out.print("Email: ");
 		setEmail(scn.nextLine());
