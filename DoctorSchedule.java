@@ -1,15 +1,18 @@
+import java.io.PrintWriter;
 import java.util.*;
 
 public class DoctorSchedule {
 	static String schedule;
 	static Scanner scn = new Scanner(System.in);
 	static TreeMap<String, String> doctorSchedule = new TreeMap<>();
+	static PrintWriter printDoctor = new PrintWriter(System.out);
 
 	public static void doctorSchedule() {
 		doctorSchedule.put("1", "Dr.Smith");
 		doctorSchedule.put("2", "Dr. James");
 		doctorSchedule.put("3", "Dr.Mundo");
 		doctorSchedule.put("4", "Dr. Speed");
+		
 		picking();
 
 		while (true) {

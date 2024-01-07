@@ -51,49 +51,65 @@ public class adminEdit {
 			String edit = scn.next();
 
 			if (edit.equals("1")) {
-				while (true) {
-					System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
+				System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
 
-					if (scn.next().equals("1")) {
+				if (scn.next().equals("1")) {
+					System.out.print("Enter Name: ");
+					String name = doctor.readLine();
+					System.out.print("Enter Position: ");
+					String position = doctor.readLine();
+					System.out.print("Enter Contact Number: ");
+					String contactNum = doctor.readLine();
+
+					Doctor.write("Dr." + name + "\n");
+					Doctor.write("Position: " + position + "\n");
+					Doctor.write("Contact Number: " + contactNum + "\n");
+					Doctor.newLine();
+					Doctor.flush();
+					String answer = "Y";
+					while (answer.equals("Y")) {
+						System.out.println("Do you want to add another? ");
+						answer = scn.next().toUpperCase();
 						System.out.print("Enter Name: ");
-						String name = doctor.readLine();
+						name = doctor.readLine();
 						System.out.print("Enter Position: ");
-						String position = doctor.readLine();
+						position = doctor.readLine();
 						System.out.print("Enter Contact Number: ");
-						String contactNum = doctor.readLine();
-						
+						contactNum = doctor.readLine();
+
 						Doctor.write("Dr." + name + "\n");
 						Doctor.write("Position: " + position + "\n");
 						Doctor.write("Contact Number: " + contactNum + "\n");
+
 						Doctor.newLine();
-	
 						Doctor.flush();
 
-					} else if (scn.next().equals("2")) {
-
-						System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
-						if (scn.next().equals("1")) {
-							System.out.println("Enter Name: ");
-							name = nurse.readLine();
-							System.out.println("Enter Position: ");
-							position = nurse.readLine();
-							System.out.println("Enter Contact Number: ");
-							contactNum = nurse.readLine();
-
-							Nurse.write("Nurse." + name + "\n");
-							Nurse.write("Position: " + position + "\n");
-							Nurse.write("Contact Number: " + contactNum + "\n");
-							Nurse.newLine();
-							Nurse.flush();
-
-						}
-
-					} else if (scn.next().equals("0")) {
-
-						Admin admins = new Admin();
-						admins.Admin();
 					}
+					while (answer == "N") {
+						break;
+					}
+
 				}
+			} else if (scn.next().equals("2")) {
+
+				System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
+				if (scn.next().equals("1")) {
+					System.out.println("Enter Name: ");
+					name = nurse.readLine();
+					System.out.println("Enter Position: ");
+					position = nurse.readLine();
+					System.out.println("Enter Contact Number: ");
+					contactNum = nurse.readLine();
+
+					Nurse.write("Nurse." + name + "\n");
+					Nurse.write("Position: " + position + "\n");
+					Nurse.write("Contact Number: " + contactNum + "\n");
+
+					Nurse.newLine();
+					Nurse.flush();
+
+				}
+
 			}
 
 		} catch (IOException e) {

@@ -87,7 +87,7 @@ public class Admin extends DoctorSchedule {
 		case 5:
 			adminEdit edit = new adminEdit();
 			edit.editStaff();
-			
+
 			break;
 		case 0:
 			Main main = new Main();
@@ -95,8 +95,5 @@ public class Admin extends DoctorSchedule {
 			break;
 		}
 	}
-	
-	}
 
-	
-
+}
