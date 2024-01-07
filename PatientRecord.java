@@ -1,8 +1,4 @@
 package oopTp;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-
 public class PatientRecord {
     private static Scanner sc = new Scanner(System.in);
     private static Map<String, PatientInfo> patientRecords = new HashMap<>();
@@ -28,7 +24,7 @@ public class PatientRecord {
         PatientInfo patientInfo = new PatientInfo(name, age, address, contactNumber);
         patientRecords.put(patientInfo.getId(), patientInfo);
 
-        System.out.println("");// anong message or disregard
+        System.out.println("Patient Added Successfully!");
     }
 
     public void displayPatientRecords() {
@@ -36,8 +32,25 @@ public class PatientRecord {
         for (Map.Entry<String, PatientInfo> entry : patientRecords.entrySet()) {
             System.out.println("Patient ID: " + entry.getKey());
             
-            Billing billing = new Billing(entry.getValue());
-            billing.displayBillingInfo();
+            entry.getValue().displayPatientInfo();
+
+            System.out.println("Admission Status: " + entry.getValue().getAdmissionStatus());
+            if (!entry.getValue().isAdmitted()) {
+                System.out.println("Admit the patient? (Y/N)");
+                String admitChoice = sc.nextLine().toUpperCase();
+                if (admitChoice.equals("Y")) {
+                    entry.getValue().admitPatient();
+                }
+            }
+
+            System.out.println("Discharge Status: " + entry.getValue().getDischargeStatus());
+            if (entry.getValue().isAdmitted() && !entry.getValue().isDischarged()) {
+                System.out.println("Discharge the patient? (Y/N)");
+                String dischargeChoice = sc.nextLine().toUpperCase();
+                if (dischargeChoice.equals("Y")) {
+                    entry.getValue().dischargePatient();
+                }
+            }
 
             System.out.println(""); // alignment or lines
         }
