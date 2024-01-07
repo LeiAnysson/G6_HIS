@@ -146,7 +146,7 @@ public class ListOfStaff extends adminEdit{
 		D_staffPosition.put("DR_RODRIGUEZ", "Rheumatologist");
 		D_staffNumber.put("DR_RODRIGUEZ", "XXXX-XXXX-XXX");
 	}
-	public static void N_staffMap() {
+	public static void N_staffMap() {							//nurse
 		N_staffName.put("DR_SMITH", "John Smith");
 		N_staffPosition.put("DR_SMITH", "Orthopedic");
 		N_staffNumber.put("DR_SMITH", "XXXX-XXXX-XXX");
@@ -178,7 +178,7 @@ public class ListOfStaff extends adminEdit{
 		N_staffPosition.put("DR_RODRIGUEZ", "Rheumatologist");
 		N_staffNumber.put("DR_RODRIGUEZ", "XXXX-XXXX-XXX");
 	}
-	public static void M_staffMap() {
+	public static void M_staffMap() {						//maintenance
 		M_staffName.put("DR_SMITH", "John Smith");
 		M_staffPosition.put("DR_SMITH", "Orthopedic");
 		M_staffNumber.put("DR_SMITH", "XXXX-XXXX-XXX");
