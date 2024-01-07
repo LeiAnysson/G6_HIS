@@ -1,4 +1,4 @@
-
+package Package2;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -8,17 +8,15 @@ import java.util.Scanner;
 
 public class Admin extends DoctorSchedule {
 	Scanner scn = new Scanner(System.in);
-
+	static int aInput = 0;
 	public void Admin() {
-		int aInput = 0;
 		while (true) {
-			pickingAdmin(aInput);
+			pickingAdmin();
 			categories(aInput);
 		}
 	}
 
-	public void pickingAdmin(int aInput) {
-
+	public void pickingAdmin() {
 		System.out.println("\r\n"
 				+ "\t \t \t \t \t \t \t ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗     █████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗\r\n"
 				+ "\t \t \t \t \t \t \t ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    ██╔══██╗██╔══██╗████╗ ████║██║████╗  ██║\r\n"
@@ -27,8 +25,7 @@ public class Admin extends DoctorSchedule {
 				+ "\t \t \t \t \t \t \t ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗    ██║  ██║██████╔╝██║ ╚═╝ ██║██║██║ ╚████║\r\n"
 				+ "\t \t \t \t \t \t \t  ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝    ╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝\r\n"
 				+ "                                                                                                          ");
-		System.out.println(
-				"============================================================================================================================================================================================================================================");
+		System.out.println("============================================================================================================================================================================================================================================");
 		System.out.println("\t \t \t \t \t \t \t \t \t \t Choose from the following:\n"
 				+ "\t \t \t \t \t \t \t \t \t \t [1] Patient\n" + "\t \t \t \t \t \t \t \t \t \t [2] Doctor\n"
 				+ "\t \t \t \t \t \t \t \t \t \t [3] Staff\n" + "\t \t \t \t \t \t \t \t \t \t [4] Equipment\n"
@@ -55,7 +52,7 @@ public class Admin extends DoctorSchedule {
 				DoctorAppointment docAppnt = new DoctorAppointment();
 				docAppnt.doctorAppointment();
 			} else if (aInput == 0) {
-				pickingAdmin(aInput);
+				pickingAdmin();
 			} else {
 				System.err.println("Invalid.");
 			}
@@ -69,7 +66,7 @@ public class Admin extends DoctorSchedule {
 			Equipment EQ = new Equipment();
 			System.out.println("=============================================================");
 			System.out.println("EQUIPMENTS:\n" + "[1] Diagnostic Laboratory & Imaging\n"
-					+ "[2] Critical Care / ICU equipment\n" + "[3] Operating Theatre(OT)\n" + "\t[0] Back");
+					+ "[2] Critical Care / ICU equipment\n" + "[3] Operating Theatre(OT)\n" + "[0] Back");
 			aInput = scn.nextInt();
 			System.out.println();
 			if (aInput == 1) {
@@ -79,15 +76,15 @@ public class Admin extends DoctorSchedule {
 			} else if (aInput == 3) {
 				EQ.OT();
 			} else if (aInput == 0) {
-				pickingAdmin(aInput);
+				pickingAdmin();
 			} else {
 				System.err.println("Invalid.");
 			}
 			break;
 		case 5:
 			adminEdit edit = new adminEdit();
-			edit.editStaff();
-
+			edit.picking();
+			
 			break;
 		case 0:
 			Main main = new Main();
@@ -95,5 +92,7 @@ public class Admin extends DoctorSchedule {
 			break;
 		}
 	}
+	
+	}
 
-}
+	
