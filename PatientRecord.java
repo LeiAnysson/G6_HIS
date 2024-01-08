@@ -1,4 +1,5 @@
-package oopTp;
+package Package2;
+import java.util.*;
 public class PatientRecord {
     private static Scanner sc = new Scanner(System.in);
     private static Map<String, PatientInfo> patientRecords = new HashMap<>();

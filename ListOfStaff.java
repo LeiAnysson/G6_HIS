@@ -1,4 +1,4 @@
-
+package Package2;
 import java.util.*;
 
 public class ListOfStaff extends adminEdit{
@@ -118,33 +118,43 @@ public class ListOfStaff extends adminEdit{
 		D_staffName.put("DR_SMITH", "John Smith");
 		D_staffPosition.put("DR_SMITH", "Orthopedic");
 		D_staffNumber.put("DR_SMITH", "XXXX-XXXX-XXX");
+		D_staffSched.put("DR_SMITH", "Monday-Wednesday \nTime: 8am - 4pm \nRoom: RM-101");
 		D_staffName.put("DR_SPEED", "Mikko Speed");
 		D_staffPosition.put("DR_SPEED", "General Surgery");
 		D_staffNumber.put("DR_SPEED", "XXXX-XXXX-XXX");
+		D_staffSched.put("DR_SPEED", "Saturday \nTime: 8am - 4pm \nRoom: RM-102");
 		D_staffName.put("DR_WEST", "James West");
 		D_staffPosition.put("DR_WEST", "Pediatrics");
 		D_staffNumber.put("DR_WEST", "XXXX-XXXX-XXX");
+		D_staffSched.put("DR_WEST", "Tuesday-Friday \nTime: 8am - 1pm \nRoom: RM-103");
 		D_staffName.put("DR_MUNDO", "Ray Mundo");
-		D_staffPosition.put("DR_MUNDO", "Cardiology");
+		D_staffPosition.put("DR_MUNDO", "Cardiologist");
 		D_staffNumber.put("DR_MUNDO", "XXXX-XXXX-XXX");
+		D_staffSched.put("DR_MUNDO", "Friday-Saturday \nTime: 12pm - 5pm \nRoom: RM-104");
 		D_staffName.put("DR_MONROE", "Shawn Monroe");
 		D_staffPosition.put("DR_MONROE", "Dermatologist");
 		D_staffNumber.put("DR_MONROE", "XXXX-XXXX-XXX");
+		D_staffSched.put("DR_MONROE", "Tuesday-Thursday \nTime: 12pm - 4pm \nRoom: RM-105");
 		D_staffName.put("DR_ELLIS", "John Ellis");
 		D_staffPosition.put("DR_ELLIS", "Pulmonologist");
 		D_staffNumber.put("DR_ELLIS", "XXXX-XXXX-XXX");
+		D_staffSched.put("DR_ELLIS", "Tuesday \nTime: 8am - 4pm \nRoom: RM-106");
 		D_staffName.put("DR_ROBERT", "Kenzo Robert");
 		D_staffPosition.put("DR_ROBERT", "Gastroenterologist");
 		D_staffNumber.put("DR_ROBERT", "XXXX-XXXX-XXX");
+		D_staffSched.put("DR_ROBERT", "Monday \nTime: 8am - 12pm \nRoom: RM-107");
 		D_staffName.put("DR_PEREZ", "Yohan Perez");
 		D_staffPosition.put("DR_PEREZ", "Neurologist");
 		D_staffNumber.put("DR_PEREZ", "XXXX-XXXX-XXX");
+		D_staffSched.put("DR_PEREZ", "Wednesday-Friday \nTime: 8am - 4pm \nRoom: RM-108");
 		D_staffName.put("DR_VELASQUEZ", "Kael Velasquez");
 		D_staffPosition.put("DR_VELASQUEZ", "Psychiatrist");
 		D_staffNumber.put("DR_VELASQUEZ", "XXXX-XXXX-XXX");
+		D_staffSched.put("DR_VELASQUEZ", "Monday-Tuesday \nTime: 12pm - 4pm \nRoom: RM-109");
 		D_staffName.put("DR_RODRIGUEZ", "Lash Rodriguez");
 		D_staffPosition.put("DR_RODRIGUEZ", "Rheumatologist");
 		D_staffNumber.put("DR_RODRIGUEZ", "XXXX-XXXX-XXX");
+		D_staffSched.put("DR_RODRIGUEZ", "Saturday \nTime: 8am - 4pm \nRoom: RM-110");
 	}
 	public static void N_staffMap() {							//nurse
 		N_staffName.put("RN_BARLOE", "Jane Barloe");
