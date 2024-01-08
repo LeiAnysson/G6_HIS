@@ -4,25 +4,23 @@ public class PatientRecord {
     private static Scanner sc = new Scanner(System.in);
     private static Map<String, PatientInfo> patientRecords = new HashMap<>();
 
-    public static void main(String[] args) {
-        PatientRecord patientRecord = new PatientRecord();
-        patientRecord.addPatient();
-        patientRecord.displayPatientRecords();
-    }
-
+  
     public void addPatient() {
-        System.out.println("Enter Patient Information:");
-        System.out.print("Name: ");
-        String name = sc.nextLine();
-        System.out.print("Age: ");
-        int age = sc.nextInt();
-        sc.nextLine();
-        System.out.print("Address: ");
-        String address = sc.nextLine();
-        System.out.print("Contact Number: ");
-        String contactNumber = sc.nextLine();
+    	System.out.print("Full Name: ");
+    	PatientInfo.setName(sc.nextLine());
+		System.out.print("Address: ");
+		PatientInfo.setAddress(sc.nextLine());
+		System.out.print("Gender: ");
+		PatientInfo.setGender(sc.nextLine());
+		System.out.print("Date of Birth [DD/MM/YYYY]: ");
+		PatientInfo.setBirthday(sc.nextLine());
+		System.out.print("Contact #: ");
+		PatientInfo.setContact(sc.nextInt());
+		sc.nextLine();
+		System.out.print("Email: ");
+		PatientInfo.setEmail(sc.nextLine());
 
-        PatientInfo patientInfo = new PatientInfo(name, age, address, contactNumber);
+        PatientInfo patientInfo = new PatientInfo();
         patientRecords.put(patientInfo.getId(), patientInfo);
 
         System.out.println("Patient Added Successfully!");
@@ -52,8 +50,6 @@ public class PatientRecord {
                     entry.getValue().dischargePatient();
                 }
             }
-
-            System.out.println(""); // alignment or lines
         }
     }
 }
