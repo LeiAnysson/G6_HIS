@@ -16,27 +16,32 @@ public class DoctorSchedule {
 		System.out.println("=============================================================");
 		System.out.println("DOCTORS' SCHEDULE\n");
 		display();
-		//picking();
-		pInfo.patientInfo();
+		System.out.println("=============================================================");
+		System.out.println("APPOINTMENT SCHEDULING\n");
+		picking();
+		//pInfo.patientInfo();
 	}
 	public static void picking() {
-		System.out.print("Enter Doctor's Last name to schedule an appointment: ");
-		String details = "DR_" + scn.nextLine().toUpperCase();
-		String key = details;
-		if (staffName.containsKey(key)) {
-			for (Map.Entry<String, String> entry : staffName.entrySet()) {
-				if(key.equals(entry.getKey())) {
-					System.out.println("\nChosen Doctor: " + entry.getKey());
-					System.out.println("Dr. " + staffName.get(key));
-					System.out.println("Specialization: " + staffPosition.get(key));
-					System.out.println("Contact #: " + staffNumber.get(key));
-					System.out.println("Schedule: " + staffSched.get(key));
-					pInfo.setChosen(entry.getKey());
-					System.out.println();
-				}
-			}	
-		}else {
-			System.err.println("Doctor cannot be found.");
+		while(true) {
+			System.out.print("Enter Doctor's Last name to schedule an appointment: ");
+			String details = "DR_" + scn.nextLine().toUpperCase();
+			String key = details;
+			if (staffName.containsKey(key)) {
+				for (Map.Entry<String, String> entry : staffName.entrySet()) {
+					if(key.equals(entry.getKey())) {
+						System.out.println("\nChosen Doctor: " + entry.getKey());
+						System.out.println("Dr. " + staffName.get(key));
+						System.out.println("Specialization: " + staffPosition.get(key));
+						System.out.println("Contact #: " + staffNumber.get(key));
+						System.out.println("Schedule: " + staffSched.get(key));
+						pInfo.setChosen(entry.getKey());
+						System.out.println();
+						pInfo.patientInfo();
+					}
+				}	
+			}else {
+				System.err.println("Doctor cannot be found.");
+			}
 		}
 	}
 

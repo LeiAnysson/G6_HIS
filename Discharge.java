@@ -1,4 +1,4 @@
-package oopTp;
+package Package2;
 import java.util.*;
 
 public class Discharge {
@@ -11,23 +11,23 @@ public class Discharge {
 		System.out.print("LastName: ");
 		String lname = input.nextLine();
 		System.out.print("Your Phone Number: ");
-		String pn = input.nextLine();
+		int pn = input.nextInt();
 		System.out.print("Facility Name:  ");
-		String fcn = input.nextLine();
+		String fcn = input.next();
 		System.out.print("");
 
 		System.out.println("Attending Physician");
 		System.out.print("FirstName: ");
-		String fnm = input.nextLine();
+		String fnm = input.next();
 		System.out.print("LastName: ");
-		String lnm = input.nextLine();
+		String lnm = input.next();
 
 		System.out.print("You where diagnosed with: ");
-		String dn = input.nextLine();
+		String dn = input.next();
 		System.out.print("You where treated with: ");
-		String td = input.nextLine();
+		String td = input.next();
 		System.out.print("Your test were (include result):");
-		String ts = input.nextLine();
+		String ts = input.next();
 		System.out.println("");
 
 		System.out.println("----------Your Discharge Info----------");
