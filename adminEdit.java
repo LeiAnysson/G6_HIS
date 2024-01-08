@@ -1,4 +1,4 @@
-package Package2;
+
 import java.util.*;
 
 public class adminEdit {
@@ -24,6 +24,12 @@ public class adminEdit {
 	String nrsID = "";
 	String mtnID = "";
 	String rmID;
+	public void addStaff() {
+		staffList.D_staffMap();
+		staffList.N_staffMap();
+		staffList.M_staffMap();
+		picking();
+	}
 	public void picking() {
 		System.out.println("============================================================================================================================================================================================================================================");
 		System.out.println("Choose which staff to edit: \n" 
@@ -61,14 +67,7 @@ public class adminEdit {
 						D_staffNumber.put(docID, contactNum);
 	
 						System.out.println("Added Successfully!");
-						displayDOC(D_staffName, D_staffPosition, D_staffNumber);
-	
-						System.out.print("Do you want to add another? ");
-						String answer = scn.next();
-						if(answer.equalsIgnoreCase("N")) {
-							System.out.println();
-							picking();
-						}
+						editStaff();
 					}
 				} else if(pick.equals("2")) {								//remove
 					while(true) {
@@ -90,13 +89,15 @@ public class adminEdit {
 				} else if(pick.equals("0")) {
 					picking();
 				} 
-			break;
+				break;
 			case "2":												//nurses
 				displayNRS(N_staffName, N_staffPosition, N_staffNumber);
-				System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
+//				System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
+				while(true) {
+				pickAR();
 				pick = scn.next();
 				if (pick.equals("1")) {						//add
-					while(true) {
+				
 						scn.nextLine();
 						System.out.print("Enter Last Name: ");
 						lastName = scn.nextLine();
@@ -116,16 +117,12 @@ public class adminEdit {
 						N_staffNumber.put(nrsID, contactNum);
 	
 						System.out.println("Added Successfully!");
+						//editStaff();
 						displayNRS(N_staffName, N_staffPosition, N_staffNumber);
-	
-						System.out.print("Do you want to add another? ");
-						String answer = scn.next();
-						if(answer.equalsIgnoreCase("N")) {
-							System.out.println();
-							picking();
-						}
+						pickAR();
+						pick = scn.next();
 					}
-				} else if(pick.equals("2")) {								//remove
+				 else if(pick.equals("2")) {								//remove
 					while(true) {
 						scn.nextLine();
 						System.out.print("Enter Nurse ID to delete [RN_LastName]: ");
@@ -145,7 +142,8 @@ public class adminEdit {
 				} else if(pick.equals("0")) {
 					picking();
 				}
-			break;
+				}
+			
 			case "3":							//Maintenance
 				displayMTN(M_staffName, M_staffPosition, M_staffNumber);
 				System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
@@ -171,13 +169,8 @@ public class adminEdit {
 						M_staffNumber.put(mtnID, contactNum);
 	
 						System.out.println("Added Successfully!");
-						displayMTN(M_staffName, M_staffPosition, M_staffNumber);
-	
-						System.out.print("Do you want to add another? ");
-						String answer = scn.next();
-						if(answer.equalsIgnoreCase("N")) {
-							picking();
-						}
+						editStaff();
+						//displayMTN(M_staffName, M_staffPosition, M_staffNumber);
 					}
 				} else if(pick.equals("2")) {								//remove
 					while(true) {
@@ -190,7 +183,11 @@ public class adminEdit {
 							M_staffNumber.remove(rmID);
 							System.out.println("Succesfully deleted!");
 							displayMTN(M_staffName, M_staffPosition, M_staffNumber);
-							editStaff();
+							System.out.print("Do you want to delete another?[Y/N] ");
+							String answer = scn.next();
+							if(answer.equalsIgnoreCase("N")) {
+								picking();
+							}
 						}
 						else {
 							System.err.println("Maintenance ID cannot be found.");
@@ -199,15 +196,14 @@ public class adminEdit {
 				} else if(pick.equals("0")) {
 					picking();
 				}
-			break;	
+				break;	
 			case "0":
 				Admin admin = new Admin();
 				admin.pickingAdmin();
-			break;
+				break;
 		}// end of switch
 	}// end of edit staff class
 	public void displayDOC(Map<String,String> D_staffName, Map<String,String> D_staffPosition, Map<String,String> D_staffNumber){
-		staffList.D_staffMap();
 		System.out.println("=============================================================");
 		System.out.println("DOCTORS: " + D_staffName.size() + "\n");
 		for (Map.Entry<String, String> entry : D_staffName.entrySet()) {
@@ -220,7 +216,6 @@ public class adminEdit {
 		}
 	}
 	public void displayNRS(Map<String,String> N_staffName, Map<String,String> N_staffPosition, Map<String,String> N_staffNumber){
-		staffList.N_staffMap();
 		System.out.println("=============================================================");
 		System.out.println("NURSES: " + N_staffName.size() + "\n");
 		for (Map.Entry<String, String> entry : N_staffName.entrySet()) {
@@ -233,7 +228,6 @@ public class adminEdit {
 		}
 	}
 	public void displayMTN(Map<String,String> M_staffName, Map<String,String> M_staffPosition, Map<String,String> M_staffNumber){
-		staffList.M_staffMap();
 		System.out.println("=============================================================");
 		System.out.println("MAINTENANCE PERSONNEL: " + M_staffName.size() + "\n");
 		for (Map.Entry<String, String> entry : M_staffName.entrySet()) {
@@ -244,5 +238,9 @@ public class adminEdit {
 			System.out.println("Contact #: " + M_staffNumber.get(key));
 			System.out.println();
 		}
+	}
+	public void pickAR() {
+		System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
+	//	pick = scn.next();
 	}
 }// end of admin edit class.
