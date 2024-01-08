@@ -36,9 +36,9 @@ public class PatientAppointment extends DoctorSchedule {
 		String num = input.nextLine();
 
 		diseasePicking();
-
+ 
 		String appointmentID = lastName + bday;
-
+		
 		appointmentList.put(appointmentID, name);
 		AppointmentList.put(appointmentID, chosen);
 
@@ -64,7 +64,8 @@ public class PatientAppointment extends DoctorSchedule {
 		System.out.println("\n\tName: " + lastName + ", " + firstName + "\t\tContact Num: " + num);
 		System.out.println("\n=============================================================");
 
-
+		DoctorAppointment docAppnt = new DoctorAppointment();
+		docAppnt.doctorAppointment();
 
 	}
 
@@ -91,6 +92,8 @@ public class PatientAppointment extends DoctorSchedule {
 		System.out.println("[6] Musculoskeletal Conditions");
 		System.out.println("[7] Developmental Disorder / Depression / ADHD");
 		System.out.println("[8] Osteoarthritis / Osteoporosis / Gout");
+		System.out.println("[9] Pediatrics");
+		System.out.println("[10] Colitis / Heartburn / Hepatitis");
 		String dPick = scn.next();
 
 		switch (dPick) {
@@ -139,6 +142,18 @@ public class PatientAppointment extends DoctorSchedule {
 		case "8":
 			disease.get("8");
 			System.out.println("Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_RODRIGUEZ"));
+			scn.nextLine();
+			picking();
+			break;
+		case "9":
+			disease.get("9");
+			System.out.println("Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_WEST"));
+			scn.nextLine();
+			picking();
+			break;
+		case "10":
+			disease.get("10");
+			System.out.println("Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_ROBERT"));
 			scn.nextLine();
 			picking();
 			break;
