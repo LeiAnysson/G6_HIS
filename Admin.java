@@ -40,6 +40,8 @@ public class Admin extends DoctorSchedule {
 		case 1:
 			System.out.println("=============================================================");
 			System.out.println("PATIENTS' RECORD");
+			PatientRecord record = new PatientRecord();
+			record.displayPatientRecords();
 			break;
 		case 2:
 			System.out.println("=============================================================");
