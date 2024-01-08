@@ -1,3 +1,4 @@
+package Package2;
 
 import java.util.*;
 
@@ -44,10 +45,10 @@ public class adminEdit {
 		switch(pick) {
 			case "1":														//doctors
 				displayDOC(D_staffName, D_staffPosition, D_staffNumber);
-				System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
-				pick = scn.next();
-				if (pick.equals("1")) {						//add
-					while(true) {
+				while(true) {
+					pickAR();
+					pick = scn.next();
+					if (pick.equals("1")) {						//add
 						scn.nextLine();
 						System.out.print("Enter Last Name: ");
 						lastName = scn.nextLine();
@@ -67,12 +68,12 @@ public class adminEdit {
 						D_staffNumber.put(docID, contactNum);
 	
 						System.out.println("Added Successfully!");
-						editStaff();
+						displayDOC(D_staffName, D_staffPosition, D_staffNumber);
 					}
-				} else if(pick.equals("2")) {								//remove
-					while(true) {
-						scn.nextLine();
-						System.out.print("Enter Doctor ID to delete [DR_LastName]: ");
+				 else if(pick.equals("2")) {								//remove
+					 scn.nextLine();
+					 while(true) {
+						System.out.print("Enter Doctor ID to delete [DR_LASTNAME]: ");
 						rmID = scn.nextLine();
 						if(D_staffName.containsKey(rmID)) {
 							D_staffName.remove(rmID);
@@ -80,7 +81,8 @@ public class adminEdit {
 							D_staffNumber.remove(rmID);
 							System.out.println("Succesfully deleted!");
 							displayDOC(D_staffName, D_staffPosition, D_staffNumber);
-							editStaff();
+							//pickAR();
+							//pick = scn.next();
 						}
 						else {
 							System.err.println("Doctor ID cannot be found.");
@@ -88,16 +90,14 @@ public class adminEdit {
 					}
 				} else if(pick.equals("0")) {
 					picking();
-				} 
-				break;
+				}
+				}
 			case "2":												//nurses
 				displayNRS(N_staffName, N_staffPosition, N_staffNumber);
-//				System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
 				while(true) {
-				pickAR();
-				pick = scn.next();
-				if (pick.equals("1")) {						//add
-				
+					pickAR();
+					pick = scn.next();
+					if (pick.equals("1")) {						//add
 						scn.nextLine();
 						System.out.print("Enter Last Name: ");
 						lastName = scn.nextLine();
@@ -117,22 +117,18 @@ public class adminEdit {
 						N_staffNumber.put(nrsID, contactNum);
 	
 						System.out.println("Added Successfully!");
-						//editStaff();
 						displayNRS(N_staffName, N_staffPosition, N_staffNumber);
-						pickAR();
-						pick = scn.next();
 					}
 				 else if(pick.equals("2")) {								//remove
-					while(true) {
-						scn.nextLine();
-						System.out.print("Enter Nurse ID to delete [RN_LastName]: ");
+					 scn.nextLine();
+					 while(true) {
+						System.out.print("Enter Nurse ID to delete [RN_LASTNAME]: ");
 						rmID = scn.nextLine();
 						if(N_staffName.containsKey(rmID)) {
 							N_staffName.remove(rmID);
 							N_staffPosition.remove(rmID);
 							N_staffNumber.remove(rmID);
 							System.out.println("Succesfully deleted!");
-							displayNRS(N_staffName, N_staffPosition, N_staffNumber);
 							editStaff();
 						}
 						else {
@@ -146,10 +142,10 @@ public class adminEdit {
 			
 			case "3":							//Maintenance
 				displayMTN(M_staffName, M_staffPosition, M_staffNumber);
-				System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
-				pick = scn.next();
-				if (pick.equals("1")) {						//add
-					while(true) {
+				while(true) {
+					pickAR();
+					pick = scn.next();
+					if (pick.equals("1")) {						//add
 						scn.nextLine();
 						System.out.print("Enter Last Name: ");
 						lastName = scn.nextLine();
@@ -169,13 +165,12 @@ public class adminEdit {
 						M_staffNumber.put(mtnID, contactNum);
 	
 						System.out.println("Added Successfully!");
-						editStaff();
-						//displayMTN(M_staffName, M_staffPosition, M_staffNumber);
+						displayMTN(M_staffName, M_staffPosition, M_staffNumber);
 					}
-				} else if(pick.equals("2")) {								//remove
-					while(true) {
-						scn.nextLine();
-						System.out.print("Enter Maintenance ID to delete [MT_LastName]: ");
+				 else if(pick.equals("2")) {								//remove
+					 scn.nextLine();
+					 while(true) {
+						System.out.print("Enter Maintenance ID to delete [MT_LASTNAME]: ");
 						rmID = scn.nextLine();
 						if(M_staffName.containsKey(rmID)) {
 							M_staffName.remove(rmID);
@@ -183,11 +178,6 @@ public class adminEdit {
 							M_staffNumber.remove(rmID);
 							System.out.println("Succesfully deleted!");
 							displayMTN(M_staffName, M_staffPosition, M_staffNumber);
-							System.out.print("Do you want to delete another?[Y/N] ");
-							String answer = scn.next();
-							if(answer.equalsIgnoreCase("N")) {
-								picking();
-							}
 						}
 						else {
 							System.err.println("Maintenance ID cannot be found.");
@@ -196,7 +186,7 @@ public class adminEdit {
 				} else if(pick.equals("0")) {
 					picking();
 				}
-				break;	
+				}	
 			case "0":
 				Admin admin = new Admin();
 				admin.pickingAdmin();
@@ -241,6 +231,5 @@ public class adminEdit {
 	}
 	public void pickAR() {
 		System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
-	//	pick = scn.next();
 	}
 }// end of admin edit class.
