@@ -1,4 +1,4 @@
-package Package2;
+package oopTp;
 import java.util.*;
 
 public class Discharge {
@@ -11,23 +11,23 @@ public class Discharge {
 		System.out.print("LastName: ");
 		String lname = input.nextLine();
 		System.out.print("Your Phone Number: ");
-		int pn = input.nextInt();
+		String pn = input.nextLine();
 		System.out.print("Facility Name:  ");
-		String fcn = input.next();
+		String fcn = input.nextLine();
 		System.out.print("");
 
 		System.out.println("Attending Physician");
 		System.out.print("FirstName: ");
-		String fnm = input.next();
+		String fnm = input.nextLine();
 		System.out.print("LastName: ");
-		String lnm = input.next();
+		String lnm = input.nextLine();
 
 		System.out.print("You where diagnosed with: ");
-		String dn = input.next();
+		String dn = input.nextLine();
 		System.out.print("You where treated with: ");
-		String td = input.next();
+		String td = input.nextLine();
 		System.out.print("Your test were (include result):");
-		String ts = input.next();
+		String ts = input.nextLine();
 		System.out.println("");
 
 		System.out.println("----------Your Discharge Info----------");
@@ -38,7 +38,7 @@ public class Discharge {
                 System.out.println("----------Attending Physician----------");
                 System.out.println("Name: " + fnm + "" + lnm);
                 System.out.println("");
-                System.out.println("At admission you presented with the following symptomps: " + st );
+                System.out.println("At admission you presented with the following symptomps: ");
                 System.out.println("You where diagnosed with : " + dn);
                 System.out.println("You where treated with:  " + td);
                 System.out.println("Your test were (include result): " + ts);
