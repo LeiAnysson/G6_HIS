@@ -9,7 +9,7 @@ public class Discharge extends PatientRecord {
 	public static void discharge() {
 		System.out.println("No. of Patients: " + patientName.size());
 		displayRecords();
-		//addDefault();
+		scn.nextLine();
 		System.out.println("==============================================================================");
 		while(true) {
 			System.out.print("Enter Patient ID to discharge patient[PT_LASTNAME]: ");
@@ -27,7 +27,9 @@ public class Discharge extends PatientRecord {
 //						
 //						displayRecords();
 //					}
-				}displayRecords();
+				}
+				displayRecords();
+				Redirect();
 			}else{
 					System.err.println("=========================");
 					System.err.println("Patient ID cannot be found.");
@@ -35,4 +37,17 @@ public class Discharge extends PatientRecord {
 				}
 		}
 	}
+	public static void Redirect() {
+    	System.out.println("\n[1] Homepage\n"
+    			+ "[2] Exit");
+    	String input = scn.next();
+    	if(input.equalsIgnoreCase("1")) {
+    		Admin admin = new Admin();
+    		admin.pickingAdmin();
+    	}
+    	else if(input.equalsIgnoreCase("2")) {
+    		Main main = new Main();
+    		main.thanks();
+    	}
+    }
 }

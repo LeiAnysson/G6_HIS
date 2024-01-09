@@ -36,7 +36,7 @@ public class PatientAppointment extends DoctorSchedule {
 		name = firstName + " " + lastName;
 		System.out.print("Enter Contact #: ");
 		num = input.nextLine();
-	    appointmentID = lastName + bday;
+	    appointmentID = lastName.toUpperCase() + bday;
 		
 		appointmentList.put(appointmentID, name);
 		AppointmentList.put(appointmentID, chosen);

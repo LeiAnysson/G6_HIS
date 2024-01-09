@@ -255,13 +255,10 @@ class Billing extends PatientRecord{
     		displayTMT();
     		System.out.println("\tDownpayment: \t \t" + dp);
     		System.out.println("__________________________________________________________");
-    		System.out.println("\tNew Total Balance: " + balance);
+    		System.out.println("\tNew Total Balance: \t" + balance);
     		System.out.println("    Please pay on the Hospital's on-site cashier to settle your balance.");
-    		//for (Map.Entry<String, String> entry : patientName.entrySet()){
-	    	//	String key = entry.getKey();
-	    		patientBalance.put(KEY, balance);
-	    		patientBal.replace(KEY, "YES");
-    		//}
+	    	patientBalance.put(KEY, balance);
+	    	patientBal.replace(KEY, "YES");
     	}	
     }
 
@@ -283,7 +280,7 @@ class Billing extends PatientRecord{
     			+ "\tMaterials Fee \t \t" + matFEE + "\n"
     			+ "\tMedicine \t \t" + meds + "\n"
     			+ "\tTreatment \t \t" + treatment + "\n"
-    			+ "\tInsurance \t \t" + insurance);
+    			+ "\t- Insurance \t \t" + insurance);
     	System.out.println("__________________________________________________________");
     	System.out.println("\tTotal Balance: \t \t" + newPrice);	
     }

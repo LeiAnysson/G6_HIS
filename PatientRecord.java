@@ -80,6 +80,7 @@ public class PatientRecord {
     	}
     }
     public static void displayRecords() {
+    	addDefault();
     	for(Map.Entry<String, String> entry : patientName.entrySet()){
     		String key = entry.getKey();
     		System.out.println("\nPatient ID: " + entry.getKey());
@@ -91,8 +92,8 @@ public class PatientRecord {
     		System.out.println("Email Address: " + patientEmail.get(key));
     		System.out.println("Contact Number: " + patientNumber.get(key));
        		System.out.println("Status: " + patientStatus.get(key)); 
-       		remainingBal();
-       		System.out.println("Remaining balance: " + bill.patientBal.get(key));
+       		//remainingBal();
+       		//System.out.println("Remaining balance: " + bill.patientRemaining.get(key));
     	}
     }
     public static void remainingBal() {
