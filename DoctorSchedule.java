@@ -17,19 +17,19 @@ public class DoctorSchedule{
 	
 	public static void doctorSchedule() {
 		
-		System.out.println("=============================================================");
-		System.out.println("DOCTORS' SCHEDULE\n");
+		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  =============================================================");
+		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  DOCTORS' SCHEDULE\n");
 		Ddisplay();
 	
-		System.out.println("=============================================================");
-		System.out.println("APPOINTMENT SCHEDULING\n");
+		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  =============================================================");
+		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  APPOINTMENT SCHEDULING\n");
 		pInfo.patientInfo();
 		Ddisplay();
 		
 	}
 	public static void picking() {
 		while(true) {
-			System.out.print("Enter Doctor's Last name to schedule an appointment: ");
+			System.out.print("\t \t \t \t \t \t \t \t \t \t \t \tEnter Doctor's Last name to schedule an appointment: ");
 			String details = "DR_" + scn.nextLine().toUpperCase();
 			String key = details;
 			if (staffName.containsKey(key)) {
@@ -49,7 +49,7 @@ public class DoctorSchedule{
 					}
 				}	
 			}else {
-				System.err.println("Doctor cannot be found.");
+				System.err.println("\t \t \t \t \t \t \t \t \t \t \t \t  Doctor cannot be found.");
 			}
 		}
 	}
@@ -63,10 +63,10 @@ public class DoctorSchedule{
 		for (Map.Entry<String, String> entry : staffName.entrySet()) {
 			String key = entry.getKey().toString();
 			System.out.println(entry.getKey());
-			System.out.println("Dr. " + staffName.get(key));
-			System.out.println("Specialization: " + staffPosition.get(key));
-			System.out.println("Contact #: " + staffNumber.get(key));
-			System.out.println("Schedule: " + staffSched.get(key));
+			System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Dr. " + staffName.get(key));
+			System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Specialization: " + staffPosition.get(key));
+			System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Contact #: " + staffNumber.get(key));
+			System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Schedule: " + staffSched.get(key));
 			System.out.println();
 		}
 	}
