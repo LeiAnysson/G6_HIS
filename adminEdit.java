@@ -1,4 +1,4 @@
-package Package2;
+
 
 import java.util.*;
 
@@ -42,8 +42,8 @@ public class adminEdit {
 		editStaff();
 	}
 	public void editStaff() {
-		switch(pick) {
-			case "1":														//doctors
+		
+			if(pick.equals("1")) {														//doctors
 				displayDOC(D_staffName, D_staffPosition, D_staffNumber);
 				while(true) {
 					pickAR();
@@ -72,7 +72,7 @@ public class adminEdit {
 					}
 				 else if(pick.equals("2")) {								//remove
 					 scn.nextLine();
-					 while(true) {
+					
 						System.out.print("Enter Doctor ID to delete [DR_LASTNAME]: ");
 						rmID = scn.nextLine();
 						if(D_staffName.containsKey(rmID)) {
@@ -81,18 +81,21 @@ public class adminEdit {
 							D_staffNumber.remove(rmID);
 							System.out.println("Succesfully deleted!");
 							displayDOC(D_staffName, D_staffPosition, D_staffNumber);
-							//pickAR();
+					
 							//pick = scn.next();
 						}
 						else {
+							System.err.println("=========================");
 							System.err.println("Doctor ID cannot be found.");
+							System.err.println("=========================");
 						}	
-					}
+					
 				} else if(pick.equals("0")) {
 					picking();
 				}
 				}
-			case "2":												//nurses
+			}
+			else if(pick.equals("2")) {												//nurses
 				displayNRS(N_staffName, N_staffPosition, N_staffNumber);
 				while(true) {
 					pickAR();
@@ -132,15 +135,17 @@ public class adminEdit {
 							editStaff();
 						}
 						else {
+							System.err.println("=========================");
 							System.err.println("Nurse ID cannot be found.");
+							System.err.println("=========================");
 						}	
 					}
 				} else if(pick.equals("0")) {
 					picking();
 				}
 				}
-			
-			case "3":							//Maintenance
+			}
+			else if (pick.equals("3")) {							//Maintenance
 				displayMTN(M_staffName, M_staffPosition, M_staffNumber);
 				while(true) {
 					pickAR();
@@ -169,7 +174,7 @@ public class adminEdit {
 					}
 				 else if(pick.equals("2")) {								//remove
 					 scn.nextLine();
-					 while(true) {
+					
 						System.out.print("Enter Maintenance ID to delete [MT_LASTNAME]: ");
 						rmID = scn.nextLine();
 						if(M_staffName.containsKey(rmID)) {
@@ -180,17 +185,20 @@ public class adminEdit {
 							displayMTN(M_staffName, M_staffPosition, M_staffNumber);
 						}
 						else {
+							System.err.println("=========================");
 							System.err.println("Maintenance ID cannot be found.");
-						}	
+							System.err.println("=========================");
+							
 					}
 				} else if(pick.equals("0")) {
 					picking();
 				}
-				}	
-			case "0":
+				}
+			}
+			else if (pick.equals("0")) {
 				Admin admin = new Admin();
 				admin.pickingAdmin();
-				break;
+				
 		}// end of switch
 	}// end of edit staff class
 	public void displayDOC(Map<String,String> D_staffName, Map<String,String> D_staffPosition, Map<String,String> D_staffNumber){

@@ -1,4 +1,4 @@
-package Package2;
+
 import java.util.*;
 
 public class PatientAppointment extends DoctorSchedule {
@@ -25,7 +25,7 @@ public class PatientAppointment extends DoctorSchedule {
 		return chosen;
 	}
 
-	public void patientInfo() {
+	public static void patientInfo() {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Enter Last Name: ");
 		lastName = input.nextLine();

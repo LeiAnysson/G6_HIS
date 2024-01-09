@@ -1,4 +1,4 @@
-package Package2;
+
 import java.util.*;
 
 public class ListOfStaff extends adminEdit{
@@ -132,7 +132,7 @@ public class ListOfStaff extends adminEdit{
 		D_staffNumber.put("DR_MUNDO", "XXXX-XXXX-XXX");
 		D_staffSched.put("DR_MUNDO", "Friday-Saturday \nTime: 12pm - 5pm \nRoom: RM-104");
 		D_staffName.put("DR_MONROE", "Shawn Monroe");
-		D_staffPosition.put("DR_MONROE", "Dermatologist");
+		D_staffPosition.put("DR_MONROE", "Family Medicine Specialist");
 		D_staffNumber.put("DR_MONROE", "XXXX-XXXX-XXX");
 		D_staffSched.put("DR_MONROE", "Tuesday-Thursday \nTime: 12pm - 4pm \nRoom: RM-105");
 		D_staffName.put("DR_ELLIS", "John Ellis");

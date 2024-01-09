@@ -1,4 +1,4 @@
-package Package2;
+
 
 public class PatientInfo{
 	private static int patientIDs = 1;

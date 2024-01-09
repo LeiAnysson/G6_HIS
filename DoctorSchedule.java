@@ -1,4 +1,4 @@
-package Package2;
+
 import java.util.*;
 
 public class DoctorSchedule{
@@ -10,15 +10,20 @@ public class DoctorSchedule{
 	static Map<String,String> staffPosition = new TreeMap<>(staffList.D_staffPosition);
 	static Map<String,String> staffNumber = new TreeMap<>(staffList.D_staffNumber);
 	static Map<String,String> staffSched = new TreeMap<>(staffList.D_staffSched);
+	static Billing billing = new Billing();
 	static PatientAppointment pInfo = new PatientAppointment();
 	
 	public static void doctorSchedule() {
+		
 		System.out.println("=============================================================");
 		System.out.println("DOCTORS' SCHEDULE\n");
-		display();
+		Ddisplay();
+	
 		System.out.println("=============================================================");
 		System.out.println("APPOINTMENT SCHEDULING\n");
-		picking();
+		pInfo.patientInfo();
+		Ddisplay();
+		
 	}
 	public static void picking() {
 		while(true) {
@@ -35,6 +40,8 @@ public class DoctorSchedule{
 						System.out.println("Schedule: " + staffSched.get(key));
 						pInfo.setChosen(entry.getKey());
 						System.out.println();
+						pInfo.displaySched();
+						billing.redirect();
 					}
 				}	
 			}else {
@@ -43,7 +50,7 @@ public class DoctorSchedule{
 		}
 	}
 
-	public static void display() {
+	public static void Ddisplay() {
 		staffList.D_staffMap();
 		staffName = new TreeMap<>(staffList.D_staffName);
 		staffPosition = new TreeMap<>(staffList.D_staffPosition);

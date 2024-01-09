@@ -1,4 +1,4 @@
-package Package2;
+
 
 public class Staff {
 	static String name;

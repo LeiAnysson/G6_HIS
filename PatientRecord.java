@@ -1,4 +1,4 @@
-package Package2;
+
 import java.util.*;
 public class PatientRecord {
 	static Scanner scn = new Scanner(System.in);

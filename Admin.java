@@ -1,4 +1,4 @@
-package Package2;
+
 import java.util.Scanner;
 
 public class Admin extends DoctorSchedule {
@@ -46,7 +46,7 @@ public class Admin extends DoctorSchedule {
 			System.out.println("=============================================================");
 			if (aInput == 1) {
 				System.out.println("DOCTORS' SCHEDULE\n");
-				display();
+				Ddisplay();
 			} else if (aInput == 2) {
 				DoctorAppointment docAppnt = new DoctorAppointment();
 				docAppnt.doctorAppointment();

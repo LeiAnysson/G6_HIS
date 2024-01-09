@@ -1,4 +1,4 @@
-package Package2;
+
 import java.util.*;
 class Billing extends PatientRecord{
     Scanner scn = new Scanner(System.in);

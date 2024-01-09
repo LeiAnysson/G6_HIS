@@ -1,4 +1,4 @@
-package Package2;
+
 import java.util.*;
 
 public class Patient extends DoctorSchedule {
@@ -49,6 +49,7 @@ public class Patient extends DoctorSchedule {
 					+ "");
 			System.out.println(
 					"============================================================================================================================================================================================================================================");
+			
 			doctorSchedule();
 
 			break;
