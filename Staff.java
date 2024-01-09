@@ -1,8 +1,8 @@
-
+package Package2;
 
 public class Staff {
-	static String name;
-	static String positions;
+	String name;
+	String positions;
 
 	public Staff(String name, String position) {
 		this.name = name;

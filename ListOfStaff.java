@@ -1,4 +1,4 @@
-
+package Package2;
 import java.util.*;
 
 public class ListOfStaff extends adminEdit{
@@ -45,16 +45,17 @@ public class ListOfStaff extends adminEdit{
 		name.add(new Maintenance("Maintenace, Mateo Abalos", "Hard Floor Maintenance"));
 		name.add(new Maintenance("Maintenace, Ethan Gonzales", "Hard Floor Maintenance"));
 
-		System.out.println("---------------Staffs And Maintinance---------------");
+		System.out.println("===========================================================================================================");
 
 		System.out.println("Please Choose a Category: ");
 		System.out.println("[1] Doctor");
 		System.out.println("[2] Nurse");
-		System.out.println("[3] Maintenanace");
+		System.out.println("[3] Maintenance");
+		System.out.println("[4] Homepage");
 
 		Set<Integer> chosenCategories = new HashSet<>();
 
-		while (chosenCategories.size() < 3) {
+		while (chosenCategories.size() <= 3) {
 			int choice;
 			while (true) {
 				choice = input.nextInt();
@@ -75,6 +76,13 @@ public class ListOfStaff extends adminEdit{
 							System.out.println();
 						}
 					}
+					System.out.println("===========================================================================================================");
+
+					System.out.println("Please Choose a Category: ");
+					System.out.println("[1] Doctor");
+					System.out.println("[2] Nurse");
+					System.out.println("[3] Maintenance");
+					System.out.println("[4] Homepage");
 
 					break;
 
@@ -87,6 +95,13 @@ public class ListOfStaff extends adminEdit{
 
 						}
 					}
+					System.out.println("===========================================================================================================");
+
+					System.out.println("Please Choose a Category: ");
+					System.out.println("[1] Doctor");
+					System.out.println("[2] Nurse");
+					System.out.println("[3] Maintenance");
+					System.out.println("[4] Homepage");
 
 					break;
 
@@ -99,11 +114,20 @@ public class ListOfStaff extends adminEdit{
 
 						}
 					}
+					System.out.println("===========================================================================================================");
 
-				default:
-					System.out.println("------------------------------------");
-
+					System.out.println("Please Choose a Category: ");
+					System.out.println("[1] Doctor");
+					System.out.println("[2] Nurse");
+					System.out.println("[3] Maintenance");
+					System.out.println("[4] Homepage");
+					break;
+				case 4:
+					Admin admin = new Admin();
+					admin.pickingAdmin();
+					break;
 				}
+				//redirect();
 				if (chosenCategories.add(choice)) {
 					break;
 				} else {
@@ -132,7 +156,7 @@ public class ListOfStaff extends adminEdit{
 		D_staffNumber.put("DR_MUNDO", "XXXX-XXXX-XXX");
 		D_staffSched.put("DR_MUNDO", "Friday-Saturday \nTime: 12pm - 5pm \nRoom: RM-104");
 		D_staffName.put("DR_MONROE", "Shawn Monroe");
-		D_staffPosition.put("DR_MONROE", "Family Medicine Specialist");
+		D_staffPosition.put("DR_MONROE", "Dermatologist");
 		D_staffNumber.put("DR_MONROE", "XXXX-XXXX-XXX");
 		D_staffSched.put("DR_MONROE", "Tuesday-Thursday \nTime: 12pm - 4pm \nRoom: RM-105");
 		D_staffName.put("DR_ELLIS", "John Ellis");
@@ -219,5 +243,18 @@ public class ListOfStaff extends adminEdit{
 		M_staffName.put("MT_ETHAN", "Ethan Gonzales");
 		M_staffPosition.put("MT_ETHAN", "Hard Floor Maintenance");
 		M_staffNumber.put("MT_ETHAN", "XXXX-XXXX-XXX");
+	}
+	public void redirect() {
+		System.out.println("\n[4] Homepage\n"
+				+ "[0] Exit");
+		String input = scn.next();
+		if(input.equalsIgnoreCase("4")) {
+			Admin admin = new Admin();
+			admin.pickingAdmin();
+		}
+		else if(input.equalsIgnoreCase("0")) {
+			Main main = new Main();
+			main.thanks();
+		}
 	}
 }

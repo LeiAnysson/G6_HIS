@@ -1,3 +1,4 @@
+package Package2;
 
 import java.util.*;
 
@@ -10,6 +11,7 @@ public class DoctorSchedule{
 	static Map<String,String> staffPosition = new TreeMap<>(staffList.D_staffPosition);
 	static Map<String,String> staffNumber = new TreeMap<>(staffList.D_staffNumber);
 	static Map<String,String> staffSched = new TreeMap<>(staffList.D_staffSched);
+	static Map<String, String> chosenDoctor = new TreeMap<>();
 	static Billing billing = new Billing();
 	static PatientAppointment pInfo = new PatientAppointment();
 	
@@ -34,11 +36,13 @@ public class DoctorSchedule{
 				for (Map.Entry<String, String> entry : staffName.entrySet()) {
 					if(key.equals(entry.getKey())) {
 						System.out.println("\nChosen Doctor: " + entry.getKey());
+						//chosenDoctor.put(entry.getKey(), staffName.get(key));
 						System.out.println("Dr. " + staffName.get(key));
 						System.out.println("Specialization: " + staffPosition.get(key));
 						System.out.println("Contact #: " + staffNumber.get(key));
 						System.out.println("Schedule: " + staffSched.get(key));
-						pInfo.setChosen(entry.getKey());
+						System.out.println();
+						pInfo.setChosen(entry.getValue());
 						System.out.println();
 						pInfo.displaySched();
 						billing.redirect();

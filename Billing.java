@@ -1,4 +1,4 @@
-
+package Package2;
 import java.util.*;
 class Billing extends PatientRecord{
     Scanner scn = new Scanner(System.in);
@@ -27,6 +27,7 @@ class Billing extends PatientRecord{
     static float dp;
     Map<String, String> patientBalance = new TreeMap<>();
     Map<String, String> patientBal = new TreeMap<>();
+    Map<String, String> patientRemaining = new TreeMap<>();
 
     public void redirect() {
     	System.out.println("\n[1] Homepage\n"
@@ -42,34 +43,44 @@ class Billing extends PatientRecord{
     	}
     }
     public void displayBillingInfo() {
-    	System.out.println("Billing for:\n"
-    			+ "[1] Check-up\n"
-    			+ "[2] Treament");
-    	input = scn.next(); 
-    	if(input.equals("1")) {
-    		doc.staffList.D_staffMap();
-    		doc.staffPosition = new TreeMap<>(doc.staffList.D_staffPosition);
-    		System.out.println("Choose which doctor specialization has served you: ");
-    		displayList();
-    		input = scn.next();
-    		consultation(input);
-    		displayCU();
-    		MOP();
-    		redirect();
-    	}
-    	else if(input.equals("2")) {
-    		doc.staffList.D_staffMap();
-    		doc.staffPosition = new TreeMap<>(doc.staffList.D_staffPosition);
-    		System.out.println("Choose which doctor specialization has served you: ");
-	    	displayList();
-    		input = scn.next();
-    		treatment(input);
-    		insurance(price);
-    		displayTMT();
-    		MOP();
-    		redirect();
-    	}
-    }
+	    	System.out.print("Enter Patient ID to compute bill [PT_LASTNAME]: ");
+	    	input = scn.nextLine();
+	    	//for (Map.Entry<String, String> entry : patientName.entrySet()){
+	    		//String key = entry.getKey();
+	    		if(patientName.containsKey(input)) {
+	    			System.out.println("Billing for:\n"
+	    					+ "[1] Check-up\n"
+	    					+ "[2] Treament");
+	    			input = scn.next(); 
+	    			if(input.equals("1")) {
+	    				doc.staffList.D_staffMap();
+	    				doc.staffPosition = new TreeMap<>(doc.staffList.D_staffPosition);
+	    				System.out.println("Choose which doctor specialization has served you: ");
+	    				displayList();
+	    				input = scn.next();
+	    				consultation(input);
+	    				displayCU();
+	    				redirect();
+	    			}
+	    			else if(input.equals("2")) {
+	    				doc.staffList.D_staffMap();
+	    				doc.staffPosition = new TreeMap<>(doc.staffList.D_staffPosition);
+	    				System.out.println("Choose which doctor specialization has served you: ");
+	    				displayList();
+	    				input = scn.next();
+	    				treatment(input);
+	    				insurance(price);
+	    				displayTMT();
+	    				MOP();
+	    				redirect();
+	    			}
+				}
+				else {
+					System.err.println("Patient ID cannot be found.");
+					redirect();
+				}
+	    	}
+    	//}
     public void consultation(String input) {
     	switch(input) {
     	case "1":
@@ -219,44 +230,56 @@ class Billing extends PatientRecord{
     	}
     }
     public void MOP(){
-    	System.out.println("Mode of Payment: \n"
+    	System.out.println("\nMode of Payment: \n"
     			+ "[1] Full Payment \n"
     			+ "[2] Downpayment");
     	input = scn.next();
 
     	if(input.equals("1")){
     		displayTMT();
-    		System.out.println("Please pay on the Hospital's on-site cashier to settle your balance.");
+    		System.out.println("    Please pay on the Hospital's on-site cashier to settle your balance.");
+    		//balance = "0";
     		for (Map.Entry<String, String> entry : patientName.entrySet()){
     			String key = entry.getKey();
     			patientBalance.put(key, balance);
     			patientBal.put(key, "NO");
     		}
     	} else if(input.equals("2")){
-    		System.out.print("Enter amount for down payment: ");
+    		System.out.print("Enter amount for downpayment: ");
     		dp = scn.nextFloat();
     		balance = Float.toString(newPrice - dp);
     		displayTMT();
-    		System.out.println("Please pay on the Hospital's on-site cashier to settle your balance.");
-    	}
-    	for (Map.Entry<String, String> entry : patientName.entrySet()){
-    		String key = entry.getKey();
-    		patientBalance.put(key, balance);
-    		patientBal.put(key, "YES");
-    	}
+    		System.out.println("\tDownpayment: \t" + dp);
+    		System.out.println("__________________________________________________________");
+    		System.out.println("\tNew Total Balance: " + balance);
+    		System.out.println("    Please pay on the Hospital's on-site cashier to settle your balance.");
+    		for (Map.Entry<String, String> entry : patientName.entrySet()){
+	    		String key = entry.getKey();
+	    		patientBalance.put(key, balance);
+	    		patientBal.replace(key, "YES");
+    		}
+    	}	
     }
+
     public void displayCU() {
     	System.out.println("============================================================================================================================================================================================================================================");
     	System.out.println("CHECK-UP BILL");
-    	System.out.println("Patient Name: ");
-    	System.out.println("\t" + sp + "\t \t" + price);
+    	for (Map.Entry<String, String> entry : patientName.entrySet()){
+    		String key = entry.getKey();
+    		System.out.println("Patient Name: " + patientName.get(key));
+    	}
+    	System.out.println("\n\t" + sp + "\t \t" + price);
     	System.out.println("__________________________________________________________");
-    	System.out.println("Patient Balance: \t \t \t" + price);	
+    	System.out.println("\tTotal Balance: \t \t \t" + price);	
+		System.out.println("    Please pay on the Hospital's on-site cashier to settle your balance.");
     }
     public void displayTMT() {
     	System.out.println("============================================================================================================================================================================================================================================");
     	System.out.println("TREATMENT BILL");
-       	System.out.println("Patient Name: ");
+    	for (Map.Entry<String, String> entry : patientName.entrySet()){
+    		String key = entry.getKey();
+    		System.out.println("Patient Name: " + patientName.get(key));
+    	}
     	System.out.println("\tLaboratory Fee \t \t" + labFEE + "\n"
     			+ "\tDoctor Fee \t \t" + sp + "\n"
     			+ "\tMaterials Fee \t \t" + matFEE + "\n"
@@ -264,12 +287,12 @@ class Billing extends PatientRecord{
     			+ "\tTreatment \t \t" + treatment + "\n"
     			+ "\tInsurance \t \t" + insurance);
     	System.out.println("__________________________________________________________");
-    	System.out.println("Patient Balance: \t \t" + newPrice);	
+    	System.out.println("\tTotal Balance: \t \t" + newPrice);	
     }
     public void insurance(float price) {
     	System.out.print("Do you have any patients benefits?[Y/N] ");
     	if(scn.next().equalsIgnoreCase("Y")){
-    		System.out.println("Which among the benefits that you currently have?\n"
+    		System.out.println("Which among the benefits do you currently have?\n"
     				+ "[1] PhilHealth\n"
     				+ "[2] SSS\n"
     				+ "[3] Pag-IBIG");
@@ -296,8 +319,9 @@ class Billing extends PatientRecord{
     		}
     	}else if(scn.next().equalsIgnoreCase("N")) {
     		rate = 0;
-    		insurance = rate - price;
-    		System.out.println("Insurance: \t \t" + rate);
+    		insurance = rate;
+    		newPrice = price;
+    		System.out.println("Insurance: \t \t" + newPrice);
     	}
     }
     public void displayList() {

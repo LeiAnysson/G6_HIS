@@ -1,4 +1,4 @@
-
+package Package2;
 import java.util.*;
 public class PatientRecord {
 	static Scanner scn = new Scanner(System.in);
@@ -12,7 +12,7 @@ public class PatientRecord {
 	static Map<String,String> patientEmail= new TreeMap<>();
 	static Map<String,String> patientNumber= new TreeMap<>();
 	static Map<String, String> patientStatus = new TreeMap<>();
-	static Map<String, String> patientDue = new TreeMap<>(bill.patientBal);
+	String input;
 	String lastName;
 	String firstName;
 	String patientID;
@@ -23,7 +23,7 @@ public class PatientRecord {
 	String bday;
 	String number;
 	String name;
-  
+	
     public void addPatient() {
     	System.out.print("Enter Last name: ");
     	lastName = scn.nextLine();
@@ -36,15 +36,15 @@ public class PatientRecord {
 
     	System.out.print("Enter age: ");
     	age = scn.nextLine();
-    	System.out.print("Enter Gender: ");
-    	gender = scn.nextLine();
+    	System.out.print("Enter Gender [F/M]: ");
+    	gender = scn.nextLine().toUpperCase();
     	System.out.print("Enter Address: ");
     	address = scn.nextLine();
-    	System.out.print("Enter Email: ");
+    	System.out.print("Enter Email Address: ");
     	email = scn.nextLine();
-    	System.out.print("Enter Birthday: ");
+    	System.out.print("Enter Birthday[DDMMYY]: ");
     	bday = scn.nextLine();
-    	System.out.print("Enter Number: ");
+    	System.out.print("Enter Contact Number: ");
     	number = scn.nextLine();
 
     	patientName.put(patientID, name);
@@ -55,27 +55,111 @@ public class PatientRecord {
     	patientEmail.put(patientID, email);
     	patientNumber.put(patientID, number);
     	patientStatus.put(patientID, "Admitted");
-    	displayPT();
 
-        System.out.println("Patient Added Successfully!");
+    	displayPT();
+    	redirect();
     }
     public static void displayPT(){
     	System.out.println("============================================================================================================================================================================================================================================");
 		System.out.println("\t\tELECTRONIC HEALTH RECORD\n");
     	for(Map.Entry<String, String> entry : patientName.entrySet()){
     		String key = entry.getKey();
-    		System.out.println("\t " + entry.getKey());
-    		System.out.println("\t Full Name: " + patientName.get(key));
-    		System.out.println("\t Age: " + patientAge.get(key));
-    		System.out.println("\t Gender: " + patientGender.get(key));
-    		System.out.println("\t Address: " + patientAddress.get(key));
-    		System.out.println("\t Date of Birthday: " + patientBirthday.get(key));
-    		System.out.println("\t Email: " + patientEmail.get(key));
-    		System.out.println("\t Number: " + patientNumber.get(key));
-    		System.out.println("\t Status: " + patientStatus.get(key));    
-    		if(patientDue.get(key).contains("YES")){
-    			System.out.println("\n\t Remaining balance: " + patientDue.get(key));
+    		System.out.println();
+    		System.out.println("\t Full Name: " + patientName.get(key) + "\t \t Patient ID: " + entry.getKey() + "\n");
+    		System.out.println("\t Age: " + patientAge.get(key) + " \t \t \t Gender: " + patientGender.get(key));
+    		System.out.println("\t Address: " + patientAddress.get(key) + " \t \t Date of Birth: " + patientBirthday.get(key) + "\n");
+    		System.out.println("\t Email Address: " + patientEmail.get(key));
+    		System.out.println("\t ContactNumber: " + patientNumber.get(key) + "\n");
+       		System.out.println("\t Status: " + patientStatus.get(key));  
+    		System.out.println("   _________________________________________________________");
+    		System.out.println("\t Patient Admitted. Thank you!");
+    	}
+    }
+    public static void displayRecords() {
+    	for(Map.Entry<String, String> entry : patientName.entrySet()){
+    		String key = entry.getKey();
+    		System.out.println("\nPatient ID: " + entry.getKey());
+    		System.out.println("Full Name: " + patientName.get(key));
+    		System.out.println("Age: " + patientAge.get(key));
+    		System.out.println("Gender: " + patientGender.get(key));
+    		System.out.println("Address: " + patientAddress.get(key));
+    		System.out.println("Date of Birth: " + patientBirthday.get(key));
+    		System.out.println("Email Address: " + patientEmail.get(key));
+    		System.out.println("Contact Number: " + patientNumber.get(key));
+    		System.out.println(bill.patientBal.get(key));
+       		System.out.println("Status: " + patientStatus.get(key)); 
+       		remainingBal();
+       		System.out.println("Remaining balance: " + bill.patientRemaining.get(key));
+    	}
+    }
+    public static void remainingBal() {
+    	for (Map.Entry<String, String> entry : patientName.entrySet()){
+    		String key = entry.getKey();
+			if(bill.patientBal.get(key).contains("YES")){
+				bill.patientRemaining.put(key, bill.patientBalance.get(key));		
+	    	}
+			else if(bill.patientBal.get(key).contains("NO")){
+				bill.patientRemaining.put(key, "NONE");
     		}
+    	}
+    }
+    public void addDefault() {
+		patientName.put("PT_MARQUEZ", "Lei Anysson Marquez");
+		patientName.put("PT_VILLA", "Adrianne Villa");
+		patientName.put("PT_GONZALES", "Prinz Aliester Gonzales");
+		patientName.put("PT_BULAN", "Cydric James Bulan");
+		
+    	patientAge.put("PT_MARQUEZ", "19");
+    	patientAge.put("PT_VILLA", "20");
+    	patientAge.put("PT_GONZALES", "19");
+    	patientAge.put("PT_BULAN", "18");
+    	
+    	patientGender.put("PT_MARQUEZ", "F");
+    	patientGender.put("PT_VILLA", "M");
+    	patientGender.put("PT_GONZALES", "M");
+    	patientGender.put("PT_BULAN", "M");
+    	
+    	patientAddress.put("PT_MARQUEZ", "Bocaue, Bulacan");
+    	patientAddress.put("PT_VILLA", "Pandi, Bulacan");
+    	patientAddress.put("PT_GONZALES", "Bulakan, Bulacan");
+    	patientAddress.put("PT_BULAN", "Bulakan, Bulacan");
+    	
+    	patientBirthday.put("PT_MARQUEZ", "060406");
+    	patientBirthday.put("PT_VILLA", "270903");
+    	patientBirthday.put("PT_GONZALES", "");
+    	patientBirthday.put("PT_BULAN", "012605");
+    	
+    	patientEmail.put("PT_MARQUEZ", "anyssonlei@gmail.com");
+    	patientEmail.put("PT_VILLA", "adriannevilla23@gmail.com");
+    	patientEmail.put("PT_GONZALES", "prinzgonzales10@gmail.com");
+    	patientEmail.put("PT_BULAN", "cedricjamesbulan@gmail.com");
+    	
+    	patientNumber.put("PT_MARQUEZ", "0921-5912-572");
+    	patientNumber.put("PT_VILLA", "0951-6246-823");
+    	patientNumber.put("PT_GONZALES", "0966-6554-864");
+    	patientNumber.put("PT_BULAN", "0998-4140-107");
+    	
+    	patientStatus.put("PT_MARQUEZ", "Admitted");
+    	patientStatus.put("PT_VILLA", "Admitted");
+    	patientStatus.put("PT_GONZALES", "Admitted");
+    	patientStatus.put("PT_BULAN", "Admitted");
+    	
+    	bill.patientBal.put("PT_MARQUEZ", "NO");
+    	bill.patientBal.put("PT_VILLA", "NO");
+    	bill.patientBal.put("PT_GONZALES", "NO");
+    	bill.patientBal.put("PT_BULAN", "NO");
+	}
+    public void redirect() {
+    	System.out.println("\n[1] Homepage\n"
+    			+ "[2] Exit");
+    	input = scn.next();
+    	if(input.equalsIgnoreCase("1")) {
+    		Admin admin= new Admin();
+    		admin.pickingAdmin();
+    	}
+    	else if(input.equalsIgnoreCase("2")) {
+    		Main main = new Main();
+    		main.thanks();
     	}
     }
 }

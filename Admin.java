@@ -1,4 +1,4 @@
-
+package Package2;
 import java.util.Scanner;
 
 public class Admin extends DoctorSchedule {
@@ -37,11 +37,13 @@ public class Admin extends DoctorSchedule {
 			System.out.println("=============================================================");
 			System.out.println("PATIENTS' RECORD");
 			PatientRecord record = new PatientRecord();
-			record.displayPT();
+			record.addDefault();
+			record.displayRecords();
+			redirect();
 			break;
 		case 2:
 			System.out.println("=============================================================");
-			System.out.println("DOCTORS:\n" + "[1] Doctors' Schedule\n" + "[2] Doctors' Appointment\n" + "\t[0] Back");
+			System.out.println("DOCTORS:\n" + "[1] Doctors' Schedule\n" + "[2] Doctors' Appointment\n" + "[0] Back");
 			aInput = scn.nextInt();
 			System.out.println("=============================================================");
 			if (aInput == 1) {
@@ -99,6 +101,8 @@ public class Admin extends DoctorSchedule {
 			System.out.println(
 					"============================================================================================================================================================================================================================================");
 			Discharge dis = new Discharge();
+			PatientRecord pr = new PatientRecord();
+			pr.addDefault();
 			dis.discharge();
 			break;
 		case 0:
@@ -107,7 +111,19 @@ public class Admin extends DoctorSchedule {
 			break;
 		}
 	}
-	
-	}
+	public void redirect() {
+    	System.out.println("\n[1] Homepage\n"
+    			+ "[2] Exit");
+    	String input = scn.next();
+    	if(input.equalsIgnoreCase("1")) {
+    		pickingAdmin();
+    	}
+    	else if(input.equalsIgnoreCase("2")) {
+    		Main main = new Main();
+    		main.thanks();
+    	}
+    }
+}
+
 
 	
