@@ -1,4 +1,4 @@
-
+package Package2;
 
 public class PatientInfo{
 	private static int patientIDs = 1;
@@ -92,12 +92,12 @@ public class PatientInfo{
 
 	public void admitPatient() {
 		admitted = true;
-		System.out.println("Patient Was Admitted Successfully!");
+		System.out.println("												Patient Was Admitted Successfully!");
 	}
 
 	public void dischargePatient() {
 		discharged = true;
-		System.out.println("Patient Was Discharged Successfully!");
+		System.out.println("												Patient Was Discharged Successfully!");
 	}
 
 	public String getAdmissionStatus() {
@@ -110,16 +110,16 @@ public class PatientInfo{
 
 	public void displayPatientInfo() {
 		System.out.println("============================================================================================================================================================================================================================================");
-		System.out.println("\t\tELECTRONIC HEALTH RECORD\n");
-		System.out.println("\t" + getName() + "\t\t" + getBirthday());
-		System.out.println("\t" + getAddress() + "\t\t" +getGender()); 
+		System.out.println("\t\t												ELECTRONIC HEALTH RECORD\n");
+		System.out.println("\t												" + getName() + "\t\t" + getBirthday());
+		System.out.println("\t												" + getAddress() + "\t\t" +getGender()); 
 		System.out.println();
-		System.out.println("\tContact #: " + getContact() + "\t\t" + getBirthday());
-		System.out.println("\t" + getEmail());
-		System.out.println("-------------------------------------------------------------");
-		System.out.println("\t\t    MEDICAL VISITS");
-		System.out.println("-------------------------------------------------------------");
-		System.out.println("   Date\t\t\tDoctor" + "\t\t\tDiagnosis\n" + "1. ");
+		System.out.println("\t												  Contact #: " + getContact() + "\t\t" + getBirthday());
+		System.out.println("\t												" + getEmail());
+		System.out.println("												-------------------------------------------------------------");
+		System.out.println("\t\t												MEDICAL VISITS");
+		System.out.println("												-------------------------------------------------------------");
+		System.out.println("												Date\t\t\tDoctor" + "\t\t\tDiagnosis\n" + "1. ");
 		
 		
 		
