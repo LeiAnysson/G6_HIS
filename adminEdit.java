@@ -1,4 +1,5 @@
 package Package2;
+
 import java.util.*;
 
 public class adminEdit {
@@ -31,33 +32,33 @@ public class adminEdit {
 	}
 	public void picking() {
 		System.out.println("============================================================================================================================================================================================================================================");
-		System.out.println("Choose which staff to edit: \n" 
-				+ "[1] Doctors\n" 
-				+ "[2] Nurses\n" 
-				+ "[3] Maintenance\n"
-				+ "[0] Back");
+		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Choose which staff to edit: \n" 
+				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [1] Doctors\n" 
+				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [2] Nurses\n" 
+				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [3] Maintenance\n"
+				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [0] Back");
 		pick = scn.next();
 		addStaff();
 		editStaff();
 	}
 	public void editStaff() {
-		
-			if(pick.equals("1")) {														//doctors
+		switch(pick) {
+			case "1":														//doctors
 				displayDOC(D_staffName, D_staffPosition, D_staffNumber);
 				while(true) {
 					pickAR();
 					pick = scn.next();
 					if (pick.equals("1")) {						//add
 						scn.nextLine();
-						System.out.print("Enter Last Name: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t \t Enter Last Name: ");
 						lastName = scn.nextLine();
-						System.out.print("Enter First Name: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t Enter First Name: ");
 						firstName = scn.nextLine();
 						name = firstName + " " + lastName;
 	
-						System.out.print("Enter Position: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Position: ");
 						position = scn.nextLine();
-						System.out.print("Enter Contact Number: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Contact Number: ");
 						contactNum = scn.nextLine();
 	
 						docID = "DR_" + lastName.toUpperCase();
@@ -66,50 +67,47 @@ public class adminEdit {
 						D_staffPosition.put(docID, position);
 						D_staffNumber.put(docID, contactNum);
 	
-						System.out.println("Added Successfully!");
+						System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Added Successfully!");
 						displayDOC(D_staffName, D_staffPosition, D_staffNumber);
 					}
 				 else if(pick.equals("2")) {								//remove
 					 scn.nextLine();
-					
-						System.out.print("Enter Doctor ID to delete [DR_LASTNAME]: ");
+					 while(true) {
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Doctor ID to delete [DR_LASTNAME]: ");
 						rmID = scn.nextLine();
 						if(D_staffName.containsKey(rmID)) {
 							D_staffName.remove(rmID);
 							D_staffPosition.remove(rmID);
 							D_staffNumber.remove(rmID);
-							System.out.println("Succesfully deleted!");
+							System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Succesfully deleted!");
 							displayDOC(D_staffName, D_staffPosition, D_staffNumber);
-					
+							//pickAR();
 							//pick = scn.next();
 						}
 						else {
-							System.err.println("=========================");
-							System.err.println("Doctor ID cannot be found.");
-							System.err.println("=========================");
+							System.err.println("\t \t \t \t \t \t \t \t \t \t \t \t  Doctor ID cannot be found.");
 						}	
-					
+					}
 				} else if(pick.equals("0")) {
 					picking();
 				}
 				}
-			}
-			else if(pick.equals("2")) {												//nurses
+			case "2":												//nurses
 				displayNRS(N_staffName, N_staffPosition, N_staffNumber);
 				while(true) {
 					pickAR();
 					pick = scn.next();
 					if (pick.equals("1")) {						//add
 						scn.nextLine();
-						System.out.print("Enter Last Name: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t \t Enter Last Name: ");
 						lastName = scn.nextLine();
-						System.out.print("Enter First Name: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t Enter First Name: ");
 						firstName = scn.nextLine();
 						name = firstName + " " + lastName;
 	
-						System.out.print("Enter Position: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Position: ");
 						position = scn.nextLine();
-						System.out.print("Enter Contact Number: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Contact Number: ");
 						contactNum = scn.nextLine();
 	
 						nrsID = "RN_" + lastName.toUpperCase();
@@ -118,125 +116,118 @@ public class adminEdit {
 						N_staffPosition.put(nrsID, position);
 						N_staffNumber.put(nrsID, contactNum);
 	
-						System.out.println("Added Successfully!");
+						System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Added Successfully!");
 						displayNRS(N_staffName, N_staffPosition, N_staffNumber);
 					}
 				 else if(pick.equals("2")) {								//remove
 					 scn.nextLine();
 					 while(true) {
-						System.out.print("Enter Nurse ID to delete [RN_LASTNAME]: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Nurse ID to delete [RN_LASTNAME]: ");
 						rmID = scn.nextLine();
 						if(N_staffName.containsKey(rmID)) {
 							N_staffName.remove(rmID);
 							N_staffPosition.remove(rmID);
 							N_staffNumber.remove(rmID);
-							System.out.println("Succesfully deleted!");
+							System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Succesfully deleted!");
 							editStaff();
 						}
 						else {
-							System.err.println("=========================");
-							System.err.println("Nurse ID cannot be found.");
-							System.err.println("=========================");
+							System.err.println("\t \t \t \t \t \t \t \t \t \t \t \t  Nurse ID cannot be found.");
 						}	
 					}
 				} else if(pick.equals("0")) {
 					picking();
 				}
 				}
-			}
-			else if (pick.equals("3")) {							//Maintenance
+			
+			case "3":							//Maintenance
 				displayMTN(M_staffName, M_staffPosition, M_staffNumber);
 				while(true) {
 					pickAR();
 					pick = scn.next();
 					if (pick.equals("1")) {						//add
 						scn.nextLine();
-						System.out.print("Enter Last Name: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t \t Enter Last Name: ");
 						lastName = scn.nextLine();
-						System.out.print("Enter First Name: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t Enter First Name: ");
 						firstName = scn.nextLine();
 						name = firstName + " " + lastName;
 	
-						System.out.print("Enter Position: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Position: ");
 						position = scn.nextLine();
-						System.out.print("Enter Contact Number: ");
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Contact Number: ");
 						contactNum = scn.nextLine();
-	
 						mtnID = "MT_" + lastName.toUpperCase();
 	
 						M_staffName.put(mtnID, name);
 						M_staffPosition.put(mtnID, position);
 						M_staffNumber.put(mtnID, contactNum);
 	
-						System.out.println("Added Successfully!");
+						System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Added Successfully!");
 						displayMTN(M_staffName, M_staffPosition, M_staffNumber);
 					}
 				 else if(pick.equals("2")) {								//remove
 					 scn.nextLine();
-					
-						System.out.print("Enter Maintenance ID to delete [MT_LASTNAME]: ");
+					 while(true) {
+						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Maintenance ID to delete [MT_LASTNAME]: ");
 						rmID = scn.nextLine();
 						if(M_staffName.containsKey(rmID)) {
 							M_staffName.remove(rmID);
 							M_staffPosition.remove(rmID);
 							M_staffNumber.remove(rmID);
-							System.out.println("Succesfully deleted!");
+							System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Succesfully deleted!");
 							displayMTN(M_staffName, M_staffPosition, M_staffNumber);
 						}
 						else {
-							System.err.println("=========================");
-							System.err.println("Maintenance ID cannot be found.");
-							System.err.println("=========================");
-							
+							System.err.println("t \t \t \t \t \t \t \t \t \t \t \t  Maintenance ID cannot be found.");
+						}	
 					}
 				} else if(pick.equals("0")) {
 					picking();
 				}
-				}
-			}
-			else if (pick.equals("0")) {
+				}	
+			case "0":
 				Admin admin = new Admin();
 				admin.pickingAdmin();
-				
+				break;
 		}// end of switch
 	}// end of edit staff class
-	public void displayDOC(Map<String,String> D_staffName, Map<String,String> D_staffPosition, Map<String,String> D_staffNumber){
-		System.out.println("=============================================================");
-		System.out.println("DOCTORS: " + D_staffName.size() + "\n");
-		for (Map.Entry<String, String> entry : D_staffName.entrySet()) {
-			String key = entry.getKey().toString();
-			System.out.println(entry.getKey());
-			System.out.println("Dr. " + D_staffName.get(key));
-			System.out.println("Specialization: " + D_staffPosition.get(key));
-			System.out.println("Contact #: " + D_staffNumber.get(key));
-			System.out.println();
-		}
-	}
-	public void displayNRS(Map<String,String> N_staffName, Map<String,String> N_staffPosition, Map<String,String> N_staffNumber){
-		System.out.println("=============================================================");
-		System.out.println("NURSES: " + N_staffName.size() + "\n");
-		for (Map.Entry<String, String> entry : N_staffName.entrySet()) {
-			String key = entry.getKey().toString();
-			System.out.println(entry.getKey());
-			System.out.println("Nurse " + N_staffName.get(key));
-			System.out.println("Position: " + N_staffPosition.get(key));
-			System.out.println("Contact #: " + N_staffNumber.get(key));
-			System.out.println();
-		}
-	}
-	public void displayMTN(Map<String,String> M_staffName, Map<String,String> M_staffPosition, Map<String,String> M_staffNumber){
-		System.out.println("=============================================================");
-		System.out.println("MAINTENANCE PERSONNEL: " + M_staffName.size() + "\n");
-		for (Map.Entry<String, String> entry : M_staffName.entrySet()) {
-			String key = entry.getKey().toString();
-			System.out.println(entry.getKey());
-			System.out.println("Maintenance " + M_staffName.get(key));
-			System.out.println("Position: " + M_staffPosition.get(key));
-			System.out.println("Contact #: " + M_staffNumber.get(key));
-			System.out.println();
-		}
-	}
+	public void displayDOC(Map<String, String> D_staffName, Map<String, String> D_staffPosition, Map<String, String> D_staffNumber) {
+        System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  DOCTORS: " + D_staffName.size() + "\n");
+        for (Map.Entry<String, String> entry : D_staffName.entrySet()) {
+            String key = entry.getKey().toString();
+            System.out.println("\t \t \t \t \t \t \t \t \t \t \t  " + entry.getKey());
+            System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Dr. " + D_staffName.get(key));
+            System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Specialization: " + D_staffPosition.get(key));
+            System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Contact #: " + D_staffNumber.get(key));
+            System.out.println(); // Empty line
+        }
+    }
+	 public void displayNRS(Map<String, String> N_staffName, Map<String, String> N_staffPosition, Map<String, String> N_staffNumber) {
+	        System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tNURSES: " + N_staffName.size() + "\n");
+	        for (Map.Entry<String, String> entry : N_staffName.entrySet()) {
+	            String key = entry.getKey().toString();
+	            System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  " + entry.getKey());
+	            System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Nurse " + N_staffName.get(key));
+	            System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Position: " + N_staffPosition.get(key));
+	            System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Contact #: " + N_staffNumber.get(key));
+	            System.out.println(); // Empty line
+	        }
+	    }
+	 public void displayMTN(Map<String, String> M_staffName, Map<String, String> M_staffPosition, Map<String, String> M_staffNumber) {
+	        System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  MAINTENANCE PERSONNEL: " + M_staffName.size() + "\n");
+	        for (Map.Entry<String, String> entry : M_staffName.entrySet()) {
+	            String key = entry.getKey().toString();
+	            System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  " + entry.getKey());
+	            System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Maintenance " + M_staffName.get(key));
+	            System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Position: " + M_staffPosition.get(key));
+	            System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Contact #: " + M_staffNumber.get(key));
+	            System.out.println(); // Empty line
+	        }
+	    }
 	public void pickAR() {
-		System.out.println("[1] Add\n" + "[2] Remove\n" + "[0] Back");
+		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  [1] Add\n" + 
+				"\t \t \t \t \t \t \t \t \t \t \t \t  [2] Remove\n" +
+				"\t \t \t \t \t \t \t \t \t \t \t \t  [0] Back");
 	}
 }// end of admin edit class.
