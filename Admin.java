@@ -21,12 +21,12 @@ public class Admin extends DoctorSchedule {
 				+ "\t \t \t \t \t \t \t  ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝    ╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝\r\n"
 				+ "                                                                                                          ");
 		System.out.println("============================================================================================================================================================================================================================================");
-		System.out.println("\t \t \t \t \t \t \t \t \t \t Choose from the following:\n"
-				+ "\t \t \t \t \t \t \t \t \t \t [1] Patient\n" + "\t \t \t \t \t \t \t \t \t \t [2] Doctor\n"
-				+ "\t \t \t \t \t \t \t \t \t \t [3] Staff\n" + "\t \t \t \t \t \t \t \t \t \t [4] Equipment\n"
-				+ "\t \t \t \t \t \t \t \t \t \t [5] Add/Remove Staff\n" 
-				+ "\t \t \t \t \t \t \t \t \t \t [6] Patient Discharge\n"
-				+ "\t \t \t \t \t \t \t \t \t \t [0] Back");
+		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Choose from the following:\n"
+				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [1] Patient\n" + "\t \t \t \t \t \t \t \t \t \t \t \t  [2] Doctor\n"
+				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [3] Staff\n" +   "\t \t \t \t \t \t \t \t \t \t \t \t  [4] Equipment\n"
+				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [5] Add/Remove Staff\n" 
+				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [6] Patient Discharge\n"
+				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [0] Back");
 		aInput = scn.nextInt();
 		categories(aInput);
 	}
@@ -34,19 +34,36 @@ public class Admin extends DoctorSchedule {
 	public void categories(int aInput) {
 		switch (aInput) {
 		case 1:
-			System.out.println("=============================================================");
-			System.out.println("PATIENTS' RECORD");
+			System.out.println("\r\n"
+					+ "						██████╗  █████╗ ████████╗██╗███████╗███╗   ██╗████████╗███████╗    ██████╗ ███████╗ ██████╗ ██████╗ ██████╗ ██████╗ \r\n"
+					+ "						██╔══██╗██╔══██╗╚══██╔══╝██║██╔════╝████╗  ██║╚══██╔══╝██╔════╝    ██╔══██╗██╔════╝██╔════╝██╔═══██╗██╔══██╗██╔══██╗\r\n"
+					+ "						██████╔╝███████║   ██║   ██║█████╗  ██╔██╗ ██║   ██║   ███████╗    ██████╔╝█████╗  ██║     ██║   ██║██████╔╝██║  ██║\r\n"
+					+ "						██╔═══╝ ██╔══██║   ██║   ██║██╔══╝  ██║╚██╗██║   ██║   ╚════██║    ██╔══██╗██╔══╝  ██║     ██║   ██║██╔══██╗██║  ██║\r\n"
+					+ "						██║     ██║  ██║   ██║   ██║███████╗██║ ╚████║   ██║   ███████║    ██║  ██║███████╗╚██████╗╚██████╔╝██║  ██║██████╔╝\r\n"
+					+ "						╚═╝     ╚═╝  ╚═╝   ╚═╝   ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝    ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ \r\n"
+					+ "                                                                                                                    \r\n"
+					+ "");
 			PatientRecord record = new PatientRecord();
 			record.records();
 			redirect();
 			break;
 		case 2:
-			System.out.println("=============================================================");
-			System.out.println("DOCTORS:\n" + "[1] Doctors' Schedule\n" + "[2] Doctors' Appointment\n" + "[0] Back");
+			System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  DOCTORS:\n" + 
+					           "\t \t \t \t \t \t \t \t \t \t \t \t  [1] Doctors' Schedule\n" + 
+					           "\t \t \t \t \t \t \t \t \t \t \t \t  [2] Doctors' Appointment\n" +
+					           "\t \t \t \t \t \t \t \t \t \t \t \t  [0] Back");
 			aInput = scn.nextInt();
-			System.out.println("=============================================================");
+			scn.nextLine();
 			if (aInput == 1) {
-				System.out.println("DOCTORS' SCHEDULE\n");
+				System.out.println("\r\n"
+						+ " 						██████╗  ██████╗  ██████╗████████╗ ██████╗ ██████╗ ███████╗    ███████╗ ██████╗██╗  ██╗███████╗██████╗ ██╗   ██╗██╗     ███████╗\r\n"
+						+ " 						██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗██╔════╝    ██╔════╝██╔════╝██║  ██║██╔════╝██╔══██╗██║   ██║██║     ██╔════╝\r\n"
+						+ " 						██║  ██║██║   ██║██║        ██║   ██║   ██║██████╔╝███████╗    ███████╗██║     ███████║█████╗  ██║  ██║██║   ██║██║     █████╗  \r\n"
+						+ " 						██║  ██║██║   ██║██║        ██║   ██║   ██║██╔══██╗╚════██║    ╚════██║██║     ██╔══██║██╔══╝  ██║  ██║██║   ██║██║     ██╔══╝  \r\n"
+						+ " 						██████╔╝╚██████╔╝╚██████╗   ██║   ╚██████╔╝██║  ██║███████║    ███████║╚██████╗██║  ██║███████╗██████╔╝╚██████╔╝███████╗███████╗\r\n"
+						+ " 						╚═════╝  ╚═════╝  ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝    ╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═════╝  ╚═════╝ ╚══════╝╚══════╝\r\n"
+						+ "                                                                                                                                \r\n"
+						+ "");
 				Ddisplay();
 			} else if (aInput == 2) {
 				DoctorAppointment docAppnt = new DoctorAppointment();
@@ -60,13 +77,14 @@ public class Admin extends DoctorSchedule {
 		case 3:
 			ListOfStaff listOfStaff = new ListOfStaff();
 			listOfStaff.ListOfStaff();
-			System.out.println("=============================================================");
 			break;
 		case 4:
 			Equipment EQ = new Equipment();
-			System.out.println("=============================================================");
-			System.out.println("EQUIPMENTS:\n" + "[1] Diagnostic Laboratory & Imaging\n"
-					+ "[2] Critical Care / ICU equipment\n" + "[3] Operating Theatre(OT)\n" + "[0] Back");
+			System.out.println("EQUIPMENTS:\n" + 
+					"\t \t \t \t \t \t \t \t \t \t \t \t  [1] Diagnostic Laboratory & Imaging\n"
+					+ "\t \t \t \t \t \t \t \t \t \t \t \t  [2] Critical Care / ICU equipment\n" + 
+					"\t \t \t \t \t \t \t \t \t \t \t \t  [3] Operating Theatre(OT)\n" + 
+					"\t \t \t \t \t \t \t \t \t \t \t \t  [0] Back");
 			aInput = scn.nextInt();
 			System.out.println();
 			if (aInput == 1) {
@@ -111,8 +129,8 @@ public class Admin extends DoctorSchedule {
 		}
 	}
 	public void redirect() {
-    	System.out.println("\n[1] Homepage\n"
-    			+ "[2] Exit");
+    	System.out.println("\n\t \t \t \t \t \t \t \t \t \t \t \t  [1] Homepage\n"
+    			+ "\t \t \t \t \t \t \t \t \t \t \t \t  [2] Exit");
     	String input = scn.next();
     	if(input.equalsIgnoreCase("1")) {
     		pickingAdmin();
