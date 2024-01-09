@@ -37,8 +37,7 @@ public class Admin extends DoctorSchedule {
 			System.out.println("=============================================================");
 			System.out.println("PATIENTS' RECORD");
 			PatientRecord record = new PatientRecord();
-			record.addDefault();
-			record.displayRecords();
+			record.records();
 			redirect();
 			break;
 		case 2:

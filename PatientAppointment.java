@@ -54,20 +54,6 @@ public class PatientAppointment extends DoctorSchedule {
 		System.out.println("\n\tName: " + lastName + ", " + firstName + "\t\tContact Num: " + num);
 		System.out.println("\n=============================================================");
 	}
-
-//	public static void disease() {
-//
-//		disease.put("1", "Cough / Cold");
-//		disease.put("2", "Fever");
-//		disease.put("3", "Heart Diseases / Highblood");
-//		disease.put("4", "Lump / Cyst");
-//		disease.put("5", "Brain and Spinal Cord / Peripheral Nerves and Muscle");
-//		disease.put("6", "Musculoskeletal Conditions");
-//		disease.put("7", "Developmental Disorder / Depression / ADHD");
-//		disease.put("8", "Osteoarthritis / Osteoporosis / Gout");
-//
-//	}
-
 	public static void diseasePicking() {
 		System.out.println("Choose for the following Disease: ");
 		System.out.println("[1] Cough / Cold");

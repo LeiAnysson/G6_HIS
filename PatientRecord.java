@@ -11,7 +11,7 @@ public class PatientRecord {
 	static Map<String,String> patientContact = new TreeMap<>();
 	static Map<String,String> patientEmail= new TreeMap<>();
 	static Map<String,String> patientNumber= new TreeMap<>();
-	static Map<String, String> patientStatus = new TreeMap<>();
+	static Map<String,String> patientStatus = new TreeMap<>();
 	String input;
 	String lastName;
 	String firstName;
@@ -24,6 +24,10 @@ public class PatientRecord {
 	String number;
 	String name;
 	
+	public void records() {
+		addDefault();
+		displayRecords();
+	}
     public void addPatient() {
     	System.out.print("Enter Last name: ");
     	lastName = scn.nextLine();
@@ -86,10 +90,9 @@ public class PatientRecord {
     		System.out.println("Date of Birth: " + patientBirthday.get(key));
     		System.out.println("Email Address: " + patientEmail.get(key));
     		System.out.println("Contact Number: " + patientNumber.get(key));
-    		System.out.println(bill.patientBal.get(key));
        		System.out.println("Status: " + patientStatus.get(key)); 
        		remainingBal();
-       		System.out.println("Remaining balance: " + bill.patientRemaining.get(key));
+       		System.out.println("Remaining balance: " + bill.patientBal.get(key));
     	}
     }
     public static void remainingBal() {
@@ -103,7 +106,7 @@ public class PatientRecord {
     		}
     	}
     }
-    public void addDefault() {
+    public static void addDefault() {
 		patientName.put("PT_MARQUEZ", "Lei Anysson Marquez");
 		patientName.put("PT_VILLA", "Adrianne Villa");
 		patientName.put("PT_GONZALES", "Prinz Aliester Gonzales");
@@ -154,8 +157,8 @@ public class PatientRecord {
     			+ "[2] Exit");
     	input = scn.next();
     	if(input.equalsIgnoreCase("1")) {
-    		Admin admin= new Admin();
-    		admin.pickingAdmin();
+    		Patient patient = new Patient();
+    		patient.Patient();
     	}
     	else if(input.equalsIgnoreCase("2")) {
     		Main main = new Main();

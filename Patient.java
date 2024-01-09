@@ -70,7 +70,7 @@ public class Patient extends DoctorSchedule {
 			System.out.println(
 					"============================================================================================================================================================================================================================================");
 			Billing bill = new Billing();
-			bill.displayBillingInfo();
+			bill.BillingRecords();
 			break;
 		case 0:
 			Main main = new Main();

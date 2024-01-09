@@ -25,6 +25,7 @@ class Billing extends PatientRecord{
     static float newPrice;
     static String balance;
     static float dp;
+    static String KEY;
     Map<String, String> patientBalance = new TreeMap<>();
     Map<String, String> patientBal = new TreeMap<>();
     Map<String, String> patientRemaining = new TreeMap<>();
@@ -42,11 +43,14 @@ class Billing extends PatientRecord{
     		main.thanks();
     	}
     }
+    public void BillingRecords() {
+		addDefault();
+		displayBillingInfo();
+	}
     public void displayBillingInfo() {
 	    	System.out.print("Enter Patient ID to compute bill [PT_LASTNAME]: ");
 	    	input = scn.nextLine();
-	    	//for (Map.Entry<String, String> entry : patientName.entrySet()){
-	    		//String key = entry.getKey();
+	    	KEY = input;
 	    		if(patientName.containsKey(input)) {
 	    			System.out.println("Billing for:\n"
 	    					+ "[1] Check-up\n"
@@ -249,25 +253,22 @@ class Billing extends PatientRecord{
     		dp = scn.nextFloat();
     		balance = Float.toString(newPrice - dp);
     		displayTMT();
-    		System.out.println("\tDownpayment: \t" + dp);
+    		System.out.println("\tDownpayment: \t \t" + dp);
     		System.out.println("__________________________________________________________");
     		System.out.println("\tNew Total Balance: " + balance);
     		System.out.println("    Please pay on the Hospital's on-site cashier to settle your balance.");
-    		for (Map.Entry<String, String> entry : patientName.entrySet()){
-	    		String key = entry.getKey();
-	    		patientBalance.put(key, balance);
-	    		patientBal.replace(key, "YES");
-    		}
+    		//for (Map.Entry<String, String> entry : patientName.entrySet()){
+	    	//	String key = entry.getKey();
+	    		patientBalance.put(KEY, balance);
+	    		patientBal.replace(KEY, "YES");
+    		//}
     	}	
     }
 
     public void displayCU() {
     	System.out.println("============================================================================================================================================================================================================================================");
     	System.out.println("CHECK-UP BILL");
-    	for (Map.Entry<String, String> entry : patientName.entrySet()){
-    		String key = entry.getKey();
-    		System.out.println("Patient Name: " + patientName.get(key));
-    	}
+    	System.out.println("Patient Name: " + patientName.get(KEY));
     	System.out.println("\n\t" + sp + "\t \t" + price);
     	System.out.println("__________________________________________________________");
     	System.out.println("\tTotal Balance: \t \t \t" + price);	
@@ -276,10 +277,7 @@ class Billing extends PatientRecord{
     public void displayTMT() {
     	System.out.println("============================================================================================================================================================================================================================================");
     	System.out.println("TREATMENT BILL");
-    	for (Map.Entry<String, String> entry : patientName.entrySet()){
-    		String key = entry.getKey();
-    		System.out.println("Patient Name: " + patientName.get(key));
-    	}
+    	System.out.println("Patient Name: " + patientName.get(KEY));
     	System.out.println("\tLaboratory Fee \t \t" + labFEE + "\n"
     			+ "\tDoctor Fee \t \t" + sp + "\n"
     			+ "\tMaterials Fee \t \t" + matFEE + "\n"
