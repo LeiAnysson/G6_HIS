@@ -29,7 +29,6 @@ public class adminEdit {
 		staffList.D_staffMap();
 		staffList.N_staffMap();
 		staffList.M_staffMap();
-		picking();
 	}
 	public void picking() {
 		System.out.println("============================================================================================================================================================================================================================================");
@@ -39,6 +38,7 @@ public class adminEdit {
 				+ "[3] Maintenance\n"
 				+ "[0] Back");
 		pick = scn.next();
+		addStaff();
 		editStaff();
 	}
 	public void editStaff() {

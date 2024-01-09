@@ -1,7 +1,7 @@
 package Package2;
 import java.util.*;
 
-public class DoctorSchedule {
+public class DoctorSchedule{
 	static String schedule;
 	static Scanner scn = new Scanner(System.in);
 	static TreeMap<String, String> doctorSchedule = new TreeMap<>();
@@ -19,7 +19,6 @@ public class DoctorSchedule {
 		System.out.println("=============================================================");
 		System.out.println("APPOINTMENT SCHEDULING\n");
 		picking();
-		//pInfo.patientInfo();
 	}
 	public static void picking() {
 		while(true) {
@@ -36,7 +35,6 @@ public class DoctorSchedule {
 						System.out.println("Schedule: " + staffSched.get(key));
 						pInfo.setChosen(entry.getKey());
 						System.out.println();
-						pInfo.patientInfo();
 					}
 				}	
 			}else {

@@ -17,8 +17,6 @@ public class Admission {
 				+ "");
 		PatientRecord record = new PatientRecord();
 		record.addPatient();
-		PatientInfo info = new PatientInfo();
-		info.displayPatientInfo();
 		
 		System.out.println(
 				"============================================================================================================================================================================================================================================");

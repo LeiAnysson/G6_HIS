@@ -6,7 +6,13 @@ public class PatientAppointment extends DoctorSchedule {
 	public static TreeMap<String, String> appointmentList = new TreeMap<>();
 	public static TreeMap<String, String> AppointmentList = new TreeMap<>();
 	public static TreeMap<String, String> disease = new TreeMap<>();
-
+	static String lastName = "";
+	static String firstName = "";
+	static String bday = "";
+	static String num = "";
+	static String appointmentID = "";
+	static String name = "";
+	
 	public TreeMap<String, String> getList() {
 		return PatientAppointment.appointmentList;
 	}
@@ -21,66 +27,49 @@ public class PatientAppointment extends DoctorSchedule {
 
 	public void patientInfo() {
 		Scanner input = new Scanner(System.in);
-
-		System.out.println("=============================================================");
-		System.out.println("APPOINTMENT SCHEDULING\n");
-		// pickDoctor(input, chosen);
 		System.out.print("Enter Last Name: ");
-		String lastName = input.nextLine();
+		lastName = input.nextLine();
 		System.out.print("Enter First Name: ");
-		String firstName = input.nextLine();
+		firstName = input.nextLine();
 		System.out.print("Enter birth date [DDMMYY]: ");
-		String bday = scn.nextLine();
-		String name = firstName + " " + lastName;
+		bday = scn.nextLine();
+		name = firstName + " " + lastName;
 		System.out.print("Enter Contact #: ");
-		String num = input.nextLine();
+		num = input.nextLine();
 
 		diseasePicking();
+		patientInfo();
  
-		String appointmentID = lastName + bday;
+		appointmentID = lastName + bday;
 		
 		appointmentList.put(appointmentID, name);
 		AppointmentList.put(appointmentID, chosen);
 
-		displaySched(lastName, firstName, num, chosen, appointmentID);
+		displaySched();
 
 	}
 
-	/*
-	 * public static void pickDoctor(Scanner input, String chosen) { System.out.
-	 * println("Enter the number to select the doctor for an appointment."); String
-	 * doctor = input.next(); if (doctor.equals("1")) {
-	 * setChosen(doctorSchedule.get("1").toString()); } else if (doctor.equals("2"))
-	 * { setChosen(doctorSchedule.get("2").toString()); } else if
-	 * (doctor.equals("3")) { setChosen(doctorSchedule.get("3").toString()); } else
-	 * if (doctor.equals("4")) { setChosen(doctorSchedule.get("4").toString()); } }
-	 */
-	public static void displaySched(String lastName, String firstName, String num, String chosen,
-			String appointmentID) {
+	public static void displaySched() {
 		System.out.println("\n=============================================================");
 		System.out.println("\t\tSCHEDULED APPOINTMENT\n");
 		System.out.println("\tDoctor: " + getChosen());
 		System.out.println("\tAppointment ID: " + appointmentID);
 		System.out.println("\n\tName: " + lastName + ", " + firstName + "\t\tContact Num: " + num);
 		System.out.println("\n=============================================================");
-
-		DoctorAppointment docAppnt = new DoctorAppointment();
-		docAppnt.doctorAppointment();
-
 	}
 
-	public static void disease() {
-
-		disease.put("1", "Cough / Cold");
-		disease.put("2", "Fever");
-		disease.put("3", "Heart Diseases / Highblood");
-		disease.put("4", "Lump / Cyst");
-		disease.put("5", "Brain and Spinal Cord / Peripheral Nerves and Muscle");
-		disease.put("6", "Musculoskeletal Conditions");
-		disease.put("7", "Developmental Disorder / Depression / ADHD");
-		disease.put("8", "Osteoarthritis / Osteoporosis / Gout");
-
-	}
+//	public static void disease() {
+//
+//		disease.put("1", "Cough / Cold");
+//		disease.put("2", "Fever");
+//		disease.put("3", "Heart Diseases / Highblood");
+//		disease.put("4", "Lump / Cyst");
+//		disease.put("5", "Brain and Spinal Cord / Peripheral Nerves and Muscle");
+//		disease.put("6", "Musculoskeletal Conditions");
+//		disease.put("7", "Developmental Disorder / Depression / ADHD");
+//		disease.put("8", "Osteoarthritis / Osteoporosis / Gout");
+//
+//	}
 
 	public static void diseasePicking() {
 		System.out.println("Choose for the following Disease: ");

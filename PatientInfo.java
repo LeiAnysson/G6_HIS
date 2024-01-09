@@ -64,7 +64,7 @@ public class PatientInfo{
 		return "Email: " + email;
 	}
 
-	public PatientInfo() {
+	public void PatientInfo() {
 		this.id = patientID();
 		this.name = name;
 		this.age = age;
@@ -74,7 +74,7 @@ public class PatientInfo{
 		this.discharged = false;
 	}
 
-	private String patientID() {
+	public String patientID() {
 		return "P" + patientIDs++;
 	}
 
@@ -109,8 +109,7 @@ public class PatientInfo{
 	}
 
 	public void displayPatientInfo() {
-		System.out.println(
-				"============================================================================================================================================================================================================================================");
+		System.out.println("============================================================================================================================================================================================================================================");
 		System.out.println("\t\tELECTRONIC HEALTH RECORD\n");
 		System.out.println("\t" + getName() + "\t\t" + getBirthday());
 		System.out.println("\t" + getAddress() + "\t\t" +getGender()); 
@@ -121,6 +120,9 @@ public class PatientInfo{
 		System.out.println("\t\t    MEDICAL VISITS");
 		System.out.println("-------------------------------------------------------------");
 		System.out.println("   Date\t\t\tDoctor" + "\t\t\tDiagnosis\n" + "1. ");
+		
+		
+		
 
 	}
 }
