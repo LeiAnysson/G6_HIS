@@ -29,26 +29,26 @@ public class PatientRecord {
 		displayRecords();
 	}
     public void addPatient() {
-    	System.out.print("Enter Last name: ");
+    	System.out.print("												  Enter Last name: ");
     	lastName = scn.nextLine();
-    	System.out.print("Enter First name: ");
+    	System.out.print("												  Enter First name: ");
     	firstName = scn.nextLine();
 
     	name = firstName + " " + lastName;
 
     	patientID = "PT_" + lastName.toUpperCase();
 
-    	System.out.print("Enter age: ");
+    	System.out.print("												  Enter age: ");
     	age = scn.nextLine();
-    	System.out.print("Enter Gender [F/M]: ");
+    	System.out.print("												  Enter Gender [F/M]: ");
     	gender = scn.nextLine().toUpperCase();
-    	System.out.print("Enter Address: ");
+    	System.out.print("											      Enter Address: ");
     	address = scn.nextLine();
-    	System.out.print("Enter Email Address: ");
+    	System.out.print("												  Enter Email Address: ");
     	email = scn.nextLine();
-    	System.out.print("Enter Birthday[DDMMYY]: ");
+    	System.out.print("												  Enter Birthday[DDMMYY]: ");
     	bday = scn.nextLine();
-    	System.out.print("Enter Contact Number: ");
+    	System.out.print("												  Enter Contact Number: ");
     	number = scn.nextLine();
 
     	patientName.put(patientID, name);
@@ -65,33 +65,33 @@ public class PatientRecord {
     }
     public static void displayPT(){
     	System.out.println("============================================================================================================================================================================================================================================");
-		System.out.println("\t\tELECTRONIC HEALTH RECORD\n");
+		System.out.println("\t\t												ELECTRONIC HEALTH RECORD\n");
     	for(Map.Entry<String, String> entry : patientName.entrySet()){
     		String key = entry.getKey();
     		System.out.println();
-    		System.out.println("\t Full Name: " + patientName.get(key) + "\t \t Patient ID: " + entry.getKey() + "\n");
-    		System.out.println("\t Age: " + patientAge.get(key) + " \t \t \t Gender: " + patientGender.get(key));
-    		System.out.println("\t Address: " + patientAddress.get(key) + " \t \t Date of Birth: " + patientBirthday.get(key) + "\n");
-    		System.out.println("\t Email Address: " + patientEmail.get(key));
-    		System.out.println("\t ContactNumber: " + patientNumber.get(key) + "\n");
-       		System.out.println("\t Status: " + patientStatus.get(key));  
-    		System.out.println("   _________________________________________________________");
-    		System.out.println("\t Patient Admitted. Thank you!");
+    		System.out.println("\t 												Full Name: " + patientName.get(key) + "\t \t Patient ID: " + entry.getKey() + "\n");
+    		System.out.println("\t 												Age: " + patientAge.get(key) + " \t \t \t Gender: " + patientGender.get(key));
+    		System.out.println("\t 												Address: " + patientAddress.get(key) + " \t \t Date of Birth: " + patientBirthday.get(key) + "\n");
+    		System.out.println("\t 												Email Address: " + patientEmail.get(key));
+    		System.out.println("\t 												ContactNumber: " + patientNumber.get(key) + "\n");
+       		System.out.println("\t 												Status: " + patientStatus.get(key));  
+    		System.out.println("   												_________________________________________________________");
+    		System.out.println("\t 												Patient Admitted. Thank you!");
     	}
     }
     public static void displayRecords() {
     	addDefault();
     	for(Map.Entry<String, String> entry : patientName.entrySet()){
     		String key = entry.getKey();
-    		System.out.println("\nPatient ID: " + entry.getKey());
-    		System.out.println("Full Name: " + patientName.get(key));
-    		System.out.println("Age: " + patientAge.get(key));
-    		System.out.println("Gender: " + patientGender.get(key));
-    		System.out.println("Address: " + patientAddress.get(key));
-    		System.out.println("Date of Birth: " + patientBirthday.get(key));
-    		System.out.println("Email Address: " + patientEmail.get(key));
-    		System.out.println("Contact Number: " + patientNumber.get(key));
-       		System.out.println("Status: " + patientStatus.get(key)); 
+    		System.out.println("\n												  Patient ID: " + entry.getKey());
+    		System.out.println("												  Full Name: " + patientName.get(key));
+    		System.out.println("												  Age: " + patientAge.get(key));
+    		System.out.println("												  Gender: " + patientGender.get(key));
+    		System.out.println("									 			  Address: " + patientAddress.get(key));
+    		System.out.println("												  Date of Birth: " + patientBirthday.get(key));
+    		System.out.println("												  Email Address: " + patientEmail.get(key));
+    		System.out.println("												  Contact Number: " + patientNumber.get(key));
+       		System.out.println("												  Status: " + patientStatus.get(key)); 
        		//remainingBal();
        		//System.out.println("Remaining balance: " + bill.patientRemaining.get(key));
     	}
@@ -154,8 +154,8 @@ public class PatientRecord {
     	bill.patientBal.put("PT_BULAN", "NO");
 	}
     public void redirect() {
-    	System.out.println("\n[1] Homepage\n"
-    			+ "[2] Exit");
+    	System.out.println("\n												[1] Homepage\n"
+    			+ "												[2] Exit");
     	input = scn.next();
     	if(input.equalsIgnoreCase("1")) {
     		Patient patient = new Patient();
