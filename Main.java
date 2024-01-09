@@ -23,7 +23,7 @@ public class Main {
 						+ "\t \t                                                                                                                                                                                                                  \t \t \r\n"
 						+ "\n"
 						+ "============================================================================================================================================================================================================================================");
-		System.out.println("" + "\t \t \t \t \t \t \t \t \t \t \t \t  [1] Patient\n"
+		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  [1] Patient\n"
 				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [2] Admin\n" + "\t \t \t \t \t \t \t \t \t \t \t \t  [0] Exit");
 		System.out.println(
 				"============================================================================================================================================================================================================================================");
@@ -43,14 +43,14 @@ public class Main {
 			}
 		} else if (input == 2) {
 			while (true) {
-				System.out.print("\t \t \t \t \t \t \t \t \t \t Enter password: ");
+				System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter password: ");
 				pass = scn.nextLine();
 				if (pass.equalsIgnoreCase("admin")) {
 					Admin admin = new Admin();
 					admin.Admin();
 					break;
 				} else {
-					System.err.println("\t \t \t \t \t \t \t \t \t Incorrect Password!");
+					System.err.println("\t \t \t \t \t \t \t \t \t \t \t \t  Incorrect Password!");
 				}
 			}
 		} else if (input == 0) {
