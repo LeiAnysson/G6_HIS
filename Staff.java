@@ -10,8 +10,8 @@ public class Staff {
 	}
 
 	public void displayInfo() {
-		System.out.println("\t \t \t \t \t \t \t \t Name: " + name);
-		System.out.println("\t \t \t \t \t \t \t \t Position: " + positions);
+		System.out.println("												  Name: " + name);
+		System.out.println("												  Position: " + positions);
 	}
 
 	public String getName() {
@@ -41,5 +41,4 @@ class Maintenance extends Staff {
 
 	public Maintenance(String name, String position) {
 		super(name, position);
-	}
-}
+	}}
