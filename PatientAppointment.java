@@ -36,15 +36,12 @@ public class PatientAppointment extends DoctorSchedule {
 		name = firstName + " " + lastName;
 		System.out.print("Enter Contact #: ");
 		num = input.nextLine();
-
-		diseasePicking();
-		patientInfo();
- 
-		appointmentID = lastName + bday;
+	    appointmentID = lastName + bday;
 		
 		appointmentList.put(appointmentID, name);
 		AppointmentList.put(appointmentID, chosen);
 
+		diseasePicking();
 		displaySched();
 
 	}
