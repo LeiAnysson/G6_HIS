@@ -7,15 +7,15 @@ public class Discharge extends PatientRecord {
 	static Map<String, String> patientDue = new TreeMap<>(bill.patientBal);
 
 	public static void discharge() {
-		System.out.println("No. of Patients: " + patientName.size());
+		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  No. of Patients: " + patientName.size());
 		displayRecords();
 		scn.nextLine();
 		System.out.println("==============================================================================");
 		while(true) {
-			System.out.print("Enter Patient ID to discharge patient[PT_LASTNAME]: ");
+			System.out.print("t \t \t \t \t \t \t \t \t \t \t \t  Enter Patient ID to discharge patient[PT_LASTNAME]: ");
 			input = scn.nextLine();
 			if(patientName.containsKey(input)){
-				System.out.println("Patient has been discharged!");
+				System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Patient has been discharged!");
 			for (Map.Entry<String,String> entry : patientName.entrySet()){
 				String key = entry.getKey().toString();
 					patientStatus.replace(input, "Discharged");
@@ -31,15 +31,15 @@ public class Discharge extends PatientRecord {
 				displayRecords();
 				Redirect();
 			}else{
-					System.err.println("=========================");
-					System.err.println("Patient ID cannot be found.");
-					System.err.println("=========================");
+					System.err.println("\t \t \t \t \t \t \t \t \t \t \t \t  =========================");
+					System.err.println("\t \t \t \t \t \t \t \t \t \t \t \t  Patient ID cannot be found.");
+					System.err.println("\t \t \t \t \t \t \t \t \t \t \t \t  =========================");
 				}
 		}
 	}
 	public static void Redirect() {
-    	System.out.println("\n[1] Homepage\n"
-    			+ "[2] Exit");
+    	System.out.println("\n\t \t \t \t \t \t \t \t \t \t \t \t  [1] Homepage\n"
+    			+ "\t \t \t \t \t \t \t \t \t \t \t \t  [2] Exit");
     	String input = scn.next();
     	if(input.equalsIgnoreCase("1")) {
     		Admin admin = new Admin();
