@@ -33,6 +33,7 @@ public class Equipment {
 	public void backButton() {
 		Scanner scn = new Scanner(System.in);
 		System.out.println("												[0] Back");
+		System.out.print("												  ");
 		String back = scn.next();
 		if (back.equals("0")) {
 			Admin admin = new Admin();

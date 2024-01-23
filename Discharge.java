@@ -10,9 +10,9 @@ public class Discharge extends PatientRecord {
 		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  No. of Patients: " + patientName.size());
 		displayRecords();
 		scn.nextLine();
-		System.out.println("==============================================================================");
-		while(true) {
-			System.out.print("t \t \t \t \t \t \t \t \t \t \t \t  Enter Patient ID to discharge patient[PT_LASTNAME]: ");
+    	System.out.println("============================================================================================================================================================================================================================================");
+    	while(true) {
+			System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Patient ID to discharge patient[PT_LASTNAME]: ");
 			input = scn.nextLine();
 			if(patientName.containsKey(input)){
 				System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Patient has been discharged!");

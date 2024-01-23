@@ -37,6 +37,7 @@ public class adminEdit {
 				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [2] Nurses\n" 
 				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [3] Maintenance\n"
 				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [0] Back");
+		System.out.print("												  ");
 		pick = scn.next();
 		addStaff();
 		editStaff();
@@ -47,6 +48,7 @@ public class adminEdit {
 				displayDOC(D_staffName, D_staffPosition, D_staffNumber);
 				while(true) {
 					pickAR();
+					System.out.print("												  ");
 					pick = scn.next();
 					if (pick.equals("1")) {						//add
 						scn.nextLine();
@@ -74,6 +76,7 @@ public class adminEdit {
 					 scn.nextLine();
 					 while(true) {
 						System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Doctor ID to delete [DR_LASTNAME]: ");
+						System.out.print("												  ");
 						rmID = scn.nextLine();
 						if(D_staffName.containsKey(rmID)) {
 							D_staffName.remove(rmID);
@@ -96,6 +99,7 @@ public class adminEdit {
 				displayNRS(N_staffName, N_staffPosition, N_staffNumber);
 				while(true) {
 					pickAR();
+					System.out.print("												  ");
 					pick = scn.next();
 					if (pick.equals("1")) {						//add
 						scn.nextLine();
@@ -144,6 +148,7 @@ public class adminEdit {
 				displayMTN(M_staffName, M_staffPosition, M_staffNumber);
 				while(true) {
 					pickAR();
+					System.out.print("												  ");
 					pick = scn.next();
 					if (pick.equals("1")) {						//add
 						scn.nextLine();

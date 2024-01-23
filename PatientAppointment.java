@@ -27,14 +27,14 @@ public class PatientAppointment extends DoctorSchedule {
 
 	public static void patientInfo() {
 		Scanner input = new Scanner(System.in);
-		System.out.print("												Enter Last Name: ");
+		System.out.print("										  		  Enter Last Name: ");
 		lastName = input.nextLine();
-		System.out.print("												Enter First Name: ");
+		System.out.print("												  Enter First Name: ");
 		firstName = input.nextLine();
-		System.out.print("												Enter birth date [DDMMYY]: ");
+		System.out.print("												  Enter birth date [DDMMYY]: ");
 		bday = scn.nextLine();
 		name = firstName + " " + lastName;
-		System.out.print("												Enter Contact #: ");
+		System.out.print("												  Enter Contact #: ");
 		num = input.nextLine();
 	    appointmentID = lastName.toUpperCase() + bday;
 		
@@ -55,77 +55,77 @@ public class PatientAppointment extends DoctorSchedule {
 		System.out.println("\n												=============================================================");
 	}
 	public static void diseasePicking() {
-		System.out.println("												Choose for the following Disease: ");
-		System.out.println("												[1] Cough / Cold");
-		System.out.println("												[2] Fever");
-		System.out.println("												[3] Heart Diseases / Highblood");
-		System.out.println("												[4] Lump / Cyst");
-		System.out.println("												[5] Brain and Spinal Cord / Peripheral Nerves and Muscle");
-		System.out.println("												[6] Musculoskeletal Conditions");
-		System.out.println("												[7] Developmental Disorder / Depression / ADHD");
-		System.out.println("												[8] Osteoarthritis / Osteoporosis / Gout");
-		System.out.println("												[9] Pediatrics");
-		System.out.println("												[10] Colitis / Heartburn / Hepatitis");
+		System.out.println("											  	  Choose for the following Disease: ");
+		System.out.println("												  [1] Cough / Cold");
+		System.out.println("												  [2] Fever");
+		System.out.println("												  [3] Heart Diseases / Highblood");
+		System.out.println("												  [4] Lump / Cyst");
+		System.out.println("												  [5] Brain and Spinal Cord / Peripheral Nerves and Muscle");
+		System.out.println("												  [6] Musculoskeletal Conditions");
+		System.out.println("												  [7] Developmental Disorder / Depression / ADHD");
+		System.out.println("												  [8] Osteoarthritis / Osteoporosis / Gout");
+		System.out.println("												  [9] Pediatrics");
+		System.out.println("												  [10] Colitis / Heartburn / Hepatitis");
 		String dPick = scn.next();
 
 		switch (dPick) {
 		case "1":
 			disease.get("1");
-			System.out.println("												Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_ELLIS"));
+			System.out.println("												  Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_ELLIS"));
 			scn.nextLine();
 			picking();
 			break;
 		case "2": 
 			disease.get("2");
-			System.out.println("												Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_MONROE"));
+			System.out.println("												  Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_MONROE"));
 			scn.nextLine();
 			picking();
 			break;
 		case "3":
 			disease.get("3");
-			System.out.println("												Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_MUNDO"));
+			System.out.println("												  Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_MUNDO"));
 			scn.nextLine();
 			picking();
 			break;
 		case "4":
 			disease.get("4");
-			System.out.println("												Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_SPEED"));
+			System.out.println("												  Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_SPEED"));
 			scn.nextLine();
 			picking();
 			break;
 		case "5":
 			disease.get("5");
-			System.out.println("												Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_PEREZ"));
+			System.out.println("												  Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_PEREZ"));
 			scn.nextLine();
 			picking();
 			break;
 		case "6":
 			disease.get("6");
-			System.out.println("												Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_SMITH"));
+			System.out.println("												  Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_SMITH"));
 			scn.nextLine();
 			picking();
 			break;
 		case "7":
 			disease.get("7");
-			System.out.println("												Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_VELASQUEZ"));
+			System.out.println("												  Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_VELASQUEZ"));
 			scn.nextLine();
 			picking();
 			break;
 		case "8":
 			disease.get("8");
-			System.out.println("												Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_RODRIGUEZ"));
+			System.out.println("												  Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_RODRIGUEZ"));
 			scn.nextLine();
 			picking();
 			break;
 		case "9":
 			disease.get("9");
-			System.out.println("												Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_WEST"));
+			System.out.println("												  Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_WEST"));
 			scn.nextLine();
 			picking();
 			break;
 		case "10":
 			disease.get("10");
-			System.out.println("												Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_ROBERT"));
+			System.out.println("												  Recommended Doctor: " + ListOfStaff.D_staffName.get("DR_ROBERT"));
 			scn.nextLine();
 			picking();
 			break;

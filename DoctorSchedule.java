@@ -17,11 +17,11 @@ public class DoctorSchedule{
 	
 	public static void doctorSchedule() {
 		
-		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  =============================================================");
+		//System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  =============================================================");
 		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  DOCTORS' SCHEDULE\n");
 		Ddisplay();
 	
-		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  =============================================================");
+		System.out.println("============================================================================================================================================================================================================================================");
 		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  APPOINTMENT SCHEDULING\n");
 		pInfo.patientInfo();
 		Ddisplay();
@@ -29,18 +29,18 @@ public class DoctorSchedule{
 	}
 	public static void picking() {
 		while(true) {
-			System.out.print("\t \t \t \t \t \t \t \t \t \t \t \tEnter Doctor's Last name to schedule an appointment: ");
+			System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Doctor's Last name to schedule an appointment: ");
 			String details = "DR_" + scn.nextLine().toUpperCase();
 			String key = details;
 			if (staffName.containsKey(key)) {
 				for (Map.Entry<String, String> entry : staffName.entrySet()) {
 					if(key.equals(entry.getKey())) {
-						System.out.println("\nChosen Doctor: " + entry.getKey());
+						System.out.println("\n												  Chosen Doctor: " + entry.getKey());
 						//chosenDoctor.put(entry.getKey(), staffName.get(key));
-						System.out.println("Dr. " + staffName.get(key));
-						System.out.println("Specialization: " + staffPosition.get(key));
-						System.out.println("Contact #: " + staffNumber.get(key));
-						System.out.println("Schedule: " + staffSched.get(key));
+						System.out.println("												  Dr. " + staffName.get(key));
+						System.out.println("												  Specialization: " + staffPosition.get(key));
+						System.out.println("												  Contact #: " + staffNumber.get(key));
+						System.out.println("												  Schedule: " + staffSched.get(key));
 						System.out.println();
 						pInfo.setChosen(entry.getValue());
 						System.out.println();
@@ -62,7 +62,7 @@ public class DoctorSchedule{
 		staffSched = new TreeMap<>(staffList.D_staffSched);
 		for (Map.Entry<String, String> entry : staffName.entrySet()) {
 			String key = entry.getKey().toString();
-			System.out.println(entry.getKey());
+			System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  " + entry.getKey());
 			System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Dr. " + staffName.get(key));
 			System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Specialization: " + staffPosition.get(key));
 			System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Contact #: " + staffNumber.get(key));

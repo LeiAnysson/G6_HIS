@@ -9,44 +9,43 @@ public class ListOfStaff extends adminEdit{
 		List<Staff> name = new ArrayList<>();
 
 		// Doctors
-		name.add(new Doctor("												Dr. John Smith", "Orthopedic"));
-		name.add(new Doctor(" 												Dr. Mikko Speed ", "General Surgery"));	
-		name.add(new Doctor(" 												Dr. James West", "Pediatrics"));	
-		name.add(new Doctor(" 												Dr. Ray Mundo", "Cardiology"));		
-		name.add(new Doctor(" 												Dr. Shawn Monroe", "Dermatologist"));	
-		name.add(new Doctor(" 												Dr. John Ellis", "Pulmonologist"));	
-		name.add(new Doctor(" 												Dr. Kenzo Robert", "Gastroenterologist"));	
-		name.add(new Doctor(" 												Dr. Yohan Perez", "Neurologist"));	
-		name.add(new Doctor(" 												Dr. Kael Velasquez", "Psychiatrist"));	
-		name.add(new Doctor(" 												Dr. Lash Rodriguez", "Rheumatologist"));
+		name.add(new Doctor("Dr. John Smith", "Orthopedic"));
+		name.add(new Doctor("Dr. Mikko Speed ", "General Surgery"));	
+		name.add(new Doctor("Dr. James West", "Pediatrics"));	
+		name.add(new Doctor("Dr. Ray Mundo", "Cardiology"));		
+		name.add(new Doctor("Dr. Shawn Monroe", "Dermatologist"));	
+		name.add(new Doctor("Dr. John Ellis", "Pulmonologist"));	
+		name.add(new Doctor("Dr. Kenzo Robert", "Gastroenterologist"));	
+		name.add(new Doctor("Dr. Yohan Perez", "Neurologist"));	
+		name.add(new Doctor("Dr. Kael Velasquez", "Psychiatrist"));	
+		name.add(new Doctor("Dr. Lash Rodriguez", "Rheumatologist"));
 			
 
 		// Nurse
-		name.add(new Nurse("												Nurse Janne Barloe", "Registered Nurse"));
-		name.add(new Nurse("												Nurse Smith Caddle", "Registered Nurse"));
-		name.add(new Nurse("												Nurse Amy Hart", "Registered Nurse"));
-		name.add(new Nurse("												Nurse Stella Katz", "Critical Care Nurse"));
-		name.add(new Nurse("												Nurse Cassy laurier", "Critical Care Nurse"));
-		name.add(new Nurse("												Nurse Kath Santiago", "Critical Care Nurse"));
-		name.add(new Nurse("												Nurse Cath Madden", "ER Nurse"));
-		name.add(new Nurse("												Nurse Mavis Elrod", "ER Nurse"));
-		name.add(new Nurse("												Nurse Fiora Hansley", "ER Nurse"));
-		name.add(new Nurse("												Nurse May Monroe ", "Nurse Manager"));
+		name.add(new Nurse("Nurse Janne Barloe", "Registered Nurse"));
+		name.add(new Nurse("Nurse Smith Caddle", "Registered Nurse"));
+		name.add(new Nurse("Nurse Amy Hart", "Registered Nurse"));
+		name.add(new Nurse("Nurse Stella Katz", "Critical Care Nurse"));
+		name.add(new Nurse("Nurse Cassy laurier", "Critical Care Nurse"));
+		name.add(new Nurse("Nurse Kath Santiago", "Critical Care Nurse"));
+		name.add(new Nurse("Nurse Cath Madden", "ER Nurse"));
+		name.add(new Nurse("Nurse Mavis Elrod", "ER Nurse"));
+		name.add(new Nurse("Nurse Fiora Hansley", "ER Nurse"));
+		name.add(new Nurse("Nurse May Monroe ", "Nurse Manager"));
 
 		// Maintenance
-		name.add(new Maintenance("												Maintenace, Simon Ajello ", "Preventive Maintenance"));
-		name.add(new Maintenance("												Maintenace, Benjamin Barone ", "Corrective maintenance"));
-		name.add(new Maintenance("												Maintenace, Lucas Bernard", "Preventive Maintenance"));
-		name.add(new Maintenance("												Maintenace, Noah Santos", "Corrective maintenance"));
-		name.add(new Maintenance("												Maintenace, Liam De Leon ", "Preventive Maintenance"));
-		name.add(new Maintenance("												Maintenace, Oliver Cruz ", "Corrective maintenance"));
-		name.add(new Maintenance("												Maintenace, William Aquino", "Predictive Maintenance"));
-		name.add(new Maintenance("												Maintenace, Henry Chavez", "Predictive Maintenance"));
-		name.add(new Maintenance("												Maintenace, Mateo Abalos", "Hard Floor Maintenance"));
-		name.add(new Maintenance("												Maintenace, Ethan Gonzales", "Hard Floor Maintenance"));
-
-		System.out.println("===========================================================================================================");
-
+		name.add(new Maintenance("Maintenace, Simon Ajello ", "Preventive Maintenance"));
+		name.add(new Maintenance("Maintenace, Benjamin Barone ", "Corrective maintenance"));
+		name.add(new Maintenance("Maintenace, Lucas Bernard", "Preventive Maintenance"));
+		name.add(new Maintenance("Maintenace, Noah Santos", "Corrective maintenance"));
+		name.add(new Maintenance("Maintenace, Liam De Leon ", "Preventive Maintenance"));
+		name.add(new Maintenance("Maintenace, Oliver Cruz ", "Corrective maintenance"));
+		name.add(new Maintenance("Maintenace, William Aquino", "Predictive Maintenance"));
+		name.add(new Maintenance("Maintenace, Henry Chavez", "Predictive Maintenance"));
+		name.add(new Maintenance("Maintenace, Mateo Abalos", "Hard Floor Maintenance"));
+		name.add(new Maintenance("Maintenace, Ethan Gonzales", "Hard Floor Maintenance"));
+		System.out.println(
+				"============================================================================================================================================================================================================================================");
 		System.out.println("												Please Choose a Category: ");
 		System.out.println("												[1] Doctor");
 		System.out.println("												[2] Nurse");
@@ -62,13 +61,14 @@ public class ListOfStaff extends adminEdit{
 
 				switch (choice) {
 				case 1:
+					
 					System.out.println("\r\n"
-							+ "\t \t \t \t \t \t \t \t \t  ██████╗  ██████╗  ██████╗████████╗ ██████╗ ██████╗ ███████╗\r\n"
-							+ "\t \t \t \t \t \t \t \t \t  ██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗██╔════╝\r\n"
-							+ "\t \t \t \t \t \t \t \t \t  ██║  ██║██║   ██║██║        ██║   ██║   ██║██████╔╝███████╗\r\n"
-							+ "\t \t \t \t \t \t \t \t \t  ██║  ██║██║   ██║██║        ██║   ██║   ██║██╔══██╗╚════██║\r\n"
-							+ "\t \t \t \t \t \t \t \t \t  ██████╔╝╚██████╔╝╚██████╗   ██║   ╚██████╔╝██║  ██║███████║\r\n"
-							+ "\t \t \t \t \t \t \t \t \t  ╚═════╝  ╚═════╝  ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝\r\n"
+							+ "\t \t \t \t \t \t \t \t \t \t ██████╗  ██████╗  ██████╗████████╗ ██████╗ ██████╗ ███████╗\r\n"
+							+ "\t \t \t \t \t \t \t \t \t \t ██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗██╔════╝\r\n"
+							+ "\t \t \t \t \t \t \t \t \t \t ██║  ██║██║   ██║██║        ██║   ██║   ██║██████╔╝███████╗\r\n"
+							+ "\t \t \t \t \t \t \t \t \t \t ██║  ██║██║   ██║██║        ██║   ██║   ██║██╔══██╗╚════██║\r\n"
+							+ "\t \t \t \t \t \t \t \t \t \t ██████╔╝╚██████╔╝╚██████╗   ██║   ╚██████╔╝██║  ██║███████║\r\n"
+							+ "\t \t \t \t \t \t \t \t \t \t ╚═════╝  ╚═════╝  ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝\r\n"
 							+ "");
 					for (Staff staffs : name) {
 						if (staffs instanceof Doctor) {
@@ -76,26 +76,29 @@ public class ListOfStaff extends adminEdit{
 							System.out.println();
 						}
 					}
-					System.out.println("===========================================================================================================");
-
-					System.out.println("												Please Choose a Category: ");
-					System.out.println("												[1] Doctor");
-					System.out.println("												[2] Nurse");
-					System.out.println("												[3] Maintenance");
-					System.out.println("												[4] Homepage");
+					System.out.println(
+							"============================================================================================================================================================================================================================================");
+					System.out.println("												  Please Choose a Category: ");
+					System.out.println("												  [1] Doctor");
+					System.out.println("												  [2] Nurse");
+					System.out.println("												  [3] Maintenance");
+					System.out.println("												  [4] Homepage");
 
 					break;
 
 				case 2:
+					
 					System.out.println("\r\n"
-							+ "									███╗   ██╗██╗   ██╗██████╗ ███████╗███████╗\r\n"
-							+ "									████╗  ██║██║   ██║██╔══██╗██╔════╝██╔════╝\r\n"
-							+ "									██╔██╗ ██║██║   ██║██████╔╝███████╗█████╗  \r\n"
-							+ "									██║╚██╗██║██║   ██║██╔══██╗╚════██║██╔══╝  \r\n"
-							+ "									██║ ╚████║╚██████╔╝██║  ██║███████║███████╗\r\n"
-							+ "									╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝\r\n"
-							+ "                                           \r\n"
+							+ "												███╗   ██╗██╗   ██╗██████╗ ███████╗███████╗\r\n"
+							+ "												████╗  ██║██║   ██║██╔══██╗██╔════╝██╔════╝\r\n"
+							+ "												██╔██╗ ██║██║   ██║██████╔╝███████╗█████╗  \r\n"
+							+ "												██║╚██╗██║██║   ██║██╔══██╗╚════██║██╔══╝  \r\n"
+							+ "												██║ ╚████║╚██████╔╝██║  ██║███████║███████╗\r\n"
+							+ "												╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝\r\n"
+							+ "                                 	          \r\n"
 							+ "");
+					System.out.println(
+							"============================================================================================================================================================================================================================================");
 					for (Staff staffs : name) {
 						if (staffs instanceof Nurse) {
 							staffs.displayInfo();
@@ -103,18 +106,28 @@ public class ListOfStaff extends adminEdit{
 
 						}
 					}
-					System.out.println("===========================================================================================================");
-
-					System.out.println("												Please Choose a Category: ");
-					System.out.println("												[1] Doctor");
-					System.out.println("												[2] Nurse");
-					System.out.println("												[3] Maintenance");
-					System.out.println("												[4] Homepage");
+					System.out.println(
+							"============================================================================================================================================================================================================================================");
+					System.out.println("												    Please Choose a Category: ");
+					System.out.println("												    [1] Doctor");
+					System.out.println("												    [2] Nurse");
+					System.out.println("												    [3] Maintenance");
+					System.out.println("												    [4] Homepage");
 
 					break;
 
 				case 3:
-					System.out.println("---------- MAINTENANCE ----------");
+					System.out.println(
+							"============================================================================================================================================================================================================================================");
+					System.out.println("\r\n"
+						+ ""
+						+ "										███╗   ███╗ █████╗ ██╗███╗   ██╗████████╗███████╗███╗   ██╗ █████╗ ███╗   ██╗ ██████╗███████╗\r\n"
+						+ "										████╗ ████║██╔══██╗██║████╗  ██║╚══██╔══╝██╔════╝████╗  ██║██╔══██╗████╗  ██║██╔════╝██╔════╝\r\n"
+						+ "										██╔████╔██║███████║██║██╔██╗ ██║   ██║   █████╗  ██╔██╗ ██║███████║██╔██╗ ██║██║     █████╗  \r\n"
+						+ "										██║╚██╔╝██║██╔══██║██║██║╚██╗██║   ██║   ██╔══╝  ██║╚██╗██║██╔══██║██║╚██╗██║██║     ██╔══╝  \r\n"
+						+ "										██║ ╚═╝ ██║██║  ██║██║██║ ╚████║   ██║   ███████╗██║ ╚████║██║  ██║██║ ╚████║╚██████╗███████╗\r\n"
+						+ "										╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝╚══════╝"
+						+ "");
 					for (Staff staffs : name) {
 						if (staffs instanceof Maintenance) {
 							staffs.displayInfo();
@@ -122,13 +135,12 @@ public class ListOfStaff extends adminEdit{
 
 						}
 					}
-					System.out.println("===========================================================================================================");
-
-					System.out.println("												Please Choose a Category: ");
-					System.out.println("												[1] Doctor");
-					System.out.println("												[2] Nurse");
-					System.out.println("												[3] Maintenance");
-					System.out.println("												[4] Homepage");
+			    	System.out.println("============================================================================================================================================================================================================================================");
+					System.out.println("												  Please Choose a Category: ");
+					System.out.println("												  [1] Doctor");
+					System.out.println("												  [2] Nurse");
+					System.out.println("												  [3] Maintenance");
+					System.out.println("												  [4] Homepage");
 					break;
 				case 4:
 					Admin admin = new Admin();
@@ -150,43 +162,43 @@ public class ListOfStaff extends adminEdit{
 		D_staffName.put("DR_SMITH", "John Smith");
 		D_staffPosition.put("DR_SMITH", "Orthopedic");
 		D_staffNumber.put("DR_SMITH", "XXXX-XXXX-XXX");
-		D_staffSched.put("DR_SMITH", "Monday-Wednesday \nTime: 8am - 4pm \nRoom: RM-101");
+		D_staffSched.put("DR_SMITH", "Monday-Wednesday \n\t \t \t \t \t \t \t \t \t \t \t \t  Time: 8am - 4pm \n\t \t \t \t \t \t \t \t \t \t \t \t  Room: RM-101");
 		D_staffName.put("DR_SPEED", "Mikko Speed");
 		D_staffPosition.put("DR_SPEED", "General Surgery");
 		D_staffNumber.put("DR_SPEED", "XXXX-XXXX-XXX");
-		D_staffSched.put("DR_SPEED", "Saturday \nTime: 8am - 4pm \nRoom: RM-102");
+		D_staffSched.put("DR_SPEED", "Saturday \n\t \t \t \t \t \t \t \t \t \t \t \t  Time: 8am - 4pm \n \t \t \t \t \t \t \t \t \t \t \t \t  Room: RM-102");
 		D_staffName.put("DR_WEST", "James West");
 		D_staffPosition.put("DR_WEST", "Pediatrics");
 		D_staffNumber.put("DR_WEST", "XXXX-XXXX-XXX");
-		D_staffSched.put("DR_WEST", "Tuesday-Friday \nTime: 8am - 1pm \nRoom: RM-103");
+		D_staffSched.put("DR_WEST", "Tuesday-Friday \n\t \t \t \t \t \t \t \t \t \t \t \t  Time: 8am - 1pm \n\t \t \t \t \t \t \t \t \t \t \t \t  Room: RM-103");
 		D_staffName.put("DR_MUNDO", "Ray Mundo");
 		D_staffPosition.put("DR_MUNDO", "Cardiologist");
 		D_staffNumber.put("DR_MUNDO", "XXXX-XXXX-XXX");
-		D_staffSched.put("DR_MUNDO", "Friday-Saturday \nTime: 12pm - 5pm \nRoom: RM-104");
+		D_staffSched.put("DR_MUNDO", "Friday-Saturday \n\t \t \t \t \t \t \t \t \t \t \t \t  Time: 12pm - 5pm \n\t \t \t \t \t \t \t \t \t \t \t \t  Room: RM-104");
 		D_staffName.put("DR_MONROE", "Shawn Monroe");
 		D_staffPosition.put("DR_MONROE", "Dermatologist");
 		D_staffNumber.put("DR_MONROE", "XXXX-XXXX-XXX");
-		D_staffSched.put("DR_MONROE", "Tuesday-Thursday \nTime: 12pm - 4pm \nRoom: RM-105");
+		D_staffSched.put("DR_MONROE", "Tuesday-Thursday \n\t \t \t \t \t \t \t \t \t \t \t \t  Time: 12pm - 4pm \n\t \t \t \t \t \t \t \t \t \t \t \t  Room: RM-105");
 		D_staffName.put("DR_ELLIS", "John Ellis");
 		D_staffPosition.put("DR_ELLIS", "Pulmonologist");
 		D_staffNumber.put("DR_ELLIS", "XXXX-XXXX-XXX");
-		D_staffSched.put("DR_ELLIS", "Tuesday \nTime: 8am - 4pm \nRoom: RM-106");
+		D_staffSched.put("DR_ELLIS", "Tuesday \n\t \t \t \t \t \t \t \t \t \t \t \t  Time: 8am - 4pm \n\t \t \t \t \t \t \t \t \t \t \t \t  Room: RM-106");
 		D_staffName.put("DR_ROBERT", "Kenzo Robert");
 		D_staffPosition.put("DR_ROBERT", "Gastroenterologist");
 		D_staffNumber.put("DR_ROBERT", "XXXX-XXXX-XXX");
-		D_staffSched.put("DR_ROBERT", "Monday \nTime: 8am - 12pm \nRoom: RM-107");
+		D_staffSched.put("DR_ROBERT", "Monday \n\t \t \t \t \t \t \t \t \t \t \t \t  Time: 8am - 12pm \n \t \t \t \t \t \t \t \t \t \t \t \t  Room: RM-107");
 		D_staffName.put("DR_PEREZ", "Yohan Perez");
 		D_staffPosition.put("DR_PEREZ", "Neurologist");
 		D_staffNumber.put("DR_PEREZ", "XXXX-XXXX-XXX");
-		D_staffSched.put("DR_PEREZ", "Wednesday-Friday \nTime: 8am - 4pm \nRoom: RM-108");
+		D_staffSched.put("DR_PEREZ", "Wednesday-Friday \n\t \t \t \t \t \t \t \t \t \t \t \t  Time: 8am - 4pm \n\t \t \t \t \t \t \t \t \t \t \t \t  Room: RM-108");
 		D_staffName.put("DR_VELASQUEZ", "Kael Velasquez");
 		D_staffPosition.put("DR_VELASQUEZ", "Psychiatrist");
 		D_staffNumber.put("DR_VELASQUEZ", "XXXX-XXXX-XXX");
-		D_staffSched.put("DR_VELASQUEZ", "Monday-Tuesday \nTime: 12pm - 4pm \nRoom: RM-109");
+		D_staffSched.put("DR_VELASQUEZ", "Monday-Tuesday \n\t \t \t \t \t \t \t \t \t \t \t \t  Time: 12pm - 4pm \n \t \t \t \t \t \t \t \t \t \t \t \t  Room: RM-109");
 		D_staffName.put("DR_RODRIGUEZ", "Lash Rodriguez");
 		D_staffPosition.put("DR_RODRIGUEZ", "Rheumatologist");
 		D_staffNumber.put("DR_RODRIGUEZ", "XXXX-XXXX-XXX");
-		D_staffSched.put("DR_RODRIGUEZ", "Saturday \nTime: 8am - 4pm \nRoom: RM-110");
+		D_staffSched.put("DR_RODRIGUEZ", "Saturday \n \t \t \t \t \t \t \t \t \t \t \t \t  Time: 8am - 4pm \n \t \t \t \t \t \t \t \t \t \t \t \t  Room: RM-110");
 	}
 	public static void N_staffMap() {							//nurse
 		N_staffName.put("RN_BARLOE", "Jane Barloe");
@@ -254,7 +266,7 @@ public class ListOfStaff extends adminEdit{
 	}
 	public void redirect() {
 		System.out.println("\n												[4] Homepage\n"
-				+ "[0] Exit");
+				+ "												[0] Exit");
 		String input = scn.next();
 		if(input.equalsIgnoreCase("4")) {
 			Admin admin = new Admin();

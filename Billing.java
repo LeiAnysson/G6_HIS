@@ -33,6 +33,7 @@ class Billing extends PatientRecord{
     public void redirect() {
     	System.out.println("\n\t \t \t \t \t \t \t \t \t \t \t \t  [1] Homepage\n"
     			+ "\t \t \t \t \t \t \t \t \t \t \t \t  [2] Exit");
+    	System.out.print("												  ");
     	input = scn.next();
     	if(input.equalsIgnoreCase("1")) {
     		Patient patient = new Patient();
@@ -48,19 +49,21 @@ class Billing extends PatientRecord{
 		displayBillingInfo();
 	}
     public void displayBillingInfo() {
-	    	System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter Patient ID to compute bill [PT_LASTNAME]: ");
+	    	System.out.print("\t \t \t \t \t \t \t \t \t \t \t \tEnter Patient ID to compute bill [PT_LASTNAME]: ");
 	    	input = scn.nextLine();
 	    	KEY = input;
 	    		if(patientName.containsKey(input)) {
 	    			System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tBilling for:\n"
 	    					+ "\t \t \t \t \t \t \t \t \t \t \t \t[1] Check-up\n"
 	    					+ "\t \t \t \t \t \t \t \t \t \t \t \t[2] Treament");
+	    			System.out.print("												  ");
 	    			input = scn.next(); 
 	    			if(input.equals("1")) {
 	    				doc.staffList.D_staffMap();
 	    				doc.staffPosition = new TreeMap<>(doc.staffList.D_staffPosition);
-	    				System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Choose which doctor specialization has served you: ");
+	    				System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tChoose which doctor specialization has served you: ");
 	    				displayList();
+	    				System.out.print("												  ");
 	    				input = scn.next();
 	    				consultation(input);
 	    				displayCU();
@@ -69,8 +72,9 @@ class Billing extends PatientRecord{
 	    			else if(input.equals("2")) {
 	    				doc.staffList.D_staffMap();
 	    				doc.staffPosition = new TreeMap<>(doc.staffList.D_staffPosition);
-	    				System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Choose which doctor specialization has served you: ");
+	    				System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tChoose which doctor specialization has served you: ");
 	    				displayList();
+	    				System.out.print("												  ");
 	    				input = scn.next();
 	    				treatment(input);
 	    				insurance(price);
@@ -234,9 +238,10 @@ class Billing extends PatientRecord{
     	}
     }
     public void MOP(){
-    	System.out.println("\nMode of Payment: \n"
-    			+ "[1] Full Payment \n"
-    			+ "[2] Downpayment");
+    	System.out.println("\n\t \t \t \t \t \t \t \t \t \t \t \tMode of Payment: \n"
+    			+ "\t \t \t \t \t \t \t \t \t \t \t \t[1] Full Payment \n"
+    			+ "\t \t \t \t \t \t \t \t \t \t \t \t[2] Downpayment");
+    	System.out.print("												  ");
     	input = scn.next();
 
     	if(input.equals("1")){
@@ -249,13 +254,13 @@ class Billing extends PatientRecord{
     			patientBal.put(key, "NO");
     		}
     	} else if(input.equals("2")){
-    		System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Enter amount for downpayment: ");
-    		dp = scn.nextFloat();
+    		System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Required Downpayment: 10,000\n");
+    		dp = 10000;
     		balance = Float.toString(newPrice - dp);
     		displayTMT();
-    		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Downpayment: " + dp);
-    		System.out.println("\t \t \t \t \t \t \t \t \t  __________________________________________________________");
-    		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tNew Total Balance: \t" + balance);
+    		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  	Downpayment: " + dp);
+    		System.out.println("\t \t \t \t \t \t \t \t \t	____________________________________________________________________________________");
+    		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t \tNew Total Balance: \t" + balance);
     		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tPlease pay on the Hospital's on-site cashier to settle your balance.");
 	    	patientBalance.put(KEY, balance);
 	    	patientBal.replace(KEY, "YES");
@@ -264,34 +269,37 @@ class Billing extends PatientRecord{
 
     public void displayCU() {
     	System.out.println("============================================================================================================================================================================================================================================");
-    	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  CHECK-UP BILL");
-    	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Patient Name: " + patientName.get(KEY));
-    	System.out.println("\n\t \t \t \t \t \t \t \t \t \t \t \t" + sp + "\t \t" + price);
-    	System.out.println("\t \t \t \t \t \t \t \t \t  __________________________________________________________");
+    	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tCHECK-UP BILL");
+    	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tPatient Name: " + patientName.get(KEY));
+    	System.out.println("\n\t \t \t \t \t \t \t \t \t \t \t \t  " + sp + "\t \t" + price);
+    	System.out.println("\t \t \t \t \t \t \t \t \t		____________________________________________________________________________________");
     	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Total Balance: \t \t \t" + price);	
-		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Please pay on the Hospital's on-site cashier to settle your balance.");
+		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tPlease pay on the Hospital's on-site cashier to settle your balance.");
     }
     public void displayTMT() {
     	System.out.println("============================================================================================================================================================================================================================================");
-    	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  TREATMENT BILL");
-    	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Patient Name: " + patientName.get(KEY));
-    	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Laboratory Fee \t \t" + labFEE + "\n"
-    			+ "\t \t \t \t \t \t \t \t \t \t \t \t  	Doctor Fee \t \t" + sp + "\n"
-    			+ "\t \t \t \t \t \t \t \t \t \t \t \t  	Materials Fee \t \t" + matFEE + "\n"
-    			+ "\t \t \t \t \t \t \t \t \t \t \t \t  	Medicine \t " + meds + "\n"
-    			+ "\t \t \t \t \t \t \t \t \t \t \t \t  	Treatment \t \t" + treatment + "\n"
-    			+ "\t \t \t \t \t \t \t \t \t \t \t \t	  - Insurance \t \t" + insurance);
-    	System.out.println("__________________________________________________________");
-    	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t\t  Total Balance: \t \t" + newPrice);	
+    	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tTREATMENT BILL");
+    	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tPatient Name: " + patientName.get(KEY));
+    	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t \tLaboratory Fee \t \t" + labFEE + "\n"
+    				+ "\t \t \t \t \t \t \t \t \t \t \t \t	Doctor Fee \t \t" + sp + "\n"
+    				+ "\t \t \t \t \t \t \t \t \t \t \t \t	Materials Fee \t \t" + matFEE + "\n"
+    				+ "\t \t \t \t \t \t \t \t \t \t \t \t	Medicine \t \t" + meds + "\n"
+    				+ "\t \t \t \t \t \t \t \t \t \t \t \t \tTreatment \t \t" + treatment + "\n"
+    				+ "\t \t \t \t \t \t \t \t \t \t \t \t	- Insurance \t \t" + insurance);
+    	System.out.println("\t \t \t \t \t \t \t \t \t \t____________________________________________________________________________________");
+    	System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t \tTotal Balance: \t \t" + newPrice);	
     }
     public void insurance(float price) {
-    	System.out.print("\t \t \t \t \t \t \t \t \t \t \t \t  Do you have any patients benefits?[Y/N] ");
-    	if(scn.next().equalsIgnoreCase("Y")){
-    		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \t  Which among the benefits do you currently have?\n"
-    				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [1] PhilHealth\n"
-    				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [2] SSS\n"
-    				+ "\t \t \t \t \t \t \t \t \t \t \t \t  [3] Pag-IBIG");
-    		String input = scn.next();
+    	System.out.println("============================================================================================================================================================================================================================================");
+    	System.out.print("\t \t \t \t \t \t \t \t \t \t \t \tDo you have any patients benefits?[Y/N] ");
+    	String input = scn.next();
+    	if(input.equalsIgnoreCase("Y")){
+    		System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tWhich among the benefits do you currently have?\n"
+    				+ "\t \t \t \t \t \t \t \t \t \t \t \t[1] PhilHealth\n"
+    				+ "\t \t \t \t \t \t \t \t \t \t \t \t[2] SSS\n"
+    				+ "\t \t \t \t \t \t \t \t \t \t \t \t[3] Pag-IBIG");
+    		System.out.print("												  ");
+    		input = scn.next();
     		switch (input) {
     		case "1":
     			rate = (float) 0.20;
@@ -312,7 +320,7 @@ class Billing extends PatientRecord{
     			System.out.println("\t \t \t \t \t \t \t \t \t \t \t \tInsurance: \t" + insurance);
     			break;
     		}
-    	}else if(scn.next().equalsIgnoreCase("N")) {
+    	}else if(input.equalsIgnoreCase("N")) {
     		rate = 0;
     		insurance = rate;
     		newPrice = price;

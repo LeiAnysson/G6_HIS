@@ -42,7 +42,7 @@ public class PatientRecord {
     	age = scn.nextLine();
     	System.out.print("												  Enter Gender [F/M]: ");
     	gender = scn.nextLine().toUpperCase();
-    	System.out.print("											      Enter Address: ");
+    	System.out.print("											   	  Enter Address: ");
     	address = scn.nextLine();
     	System.out.print("												  Enter Email Address: ");
     	email = scn.nextLine();
@@ -75,12 +75,12 @@ public class PatientRecord {
     		System.out.println("\t 												Email Address: " + patientEmail.get(key));
     		System.out.println("\t 												ContactNumber: " + patientNumber.get(key) + "\n");
        		System.out.println("\t 												Status: " + patientStatus.get(key));  
-    		System.out.println("   												_________________________________________________________");
+    		System.out.println("   												_____________________________________________________________________");
     		System.out.println("\t 												Patient Admitted. Thank you!");
     	}
     }
     public static void displayRecords() {
-    	addDefault();
+    	//addDefault();
     	for(Map.Entry<String, String> entry : patientName.entrySet()){
     		String key = entry.getKey();
     		System.out.println("\n												  Patient ID: " + entry.getKey());
@@ -155,7 +155,8 @@ public class PatientRecord {
 	}
     public void redirect() {
     	System.out.println("\n												[1] Homepage\n"
-    			+ "												[2] Exit");
+    						+ "												[2] Exit");
+    	System.out.print("												  ");
     	input = scn.next();
     	if(input.equalsIgnoreCase("1")) {
     		Patient patient = new Patient();
